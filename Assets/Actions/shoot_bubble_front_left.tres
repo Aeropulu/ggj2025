@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="action_shoot" load_steps=3 format=3 uid="uid://dj5o6e3utx014"]
+
+[ext_resource type="Texture2D" uid="uid://c2kok5clrbx8o" path="res://Assets/Sprites/Cartes/Effets/Carte_Envoi_Frontal_Gauche.png" id="1_ajo5h"]
+[ext_resource type="Script" path="res://Scripts/action_shoot.gd" id="2_mmsn2"]
+
+[resource]
+script = ExtResource("2_mmsn2")
+directions = Array[Vector2i]([Vector2i(0, -1), Vector2i(-1, -1)])
+delay_between_shots = 0.1
+icon = ExtResource("1_ajo5h")

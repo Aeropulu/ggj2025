@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://2hbqbvrxxpyu"]
+[gd_scene load_steps=23 format=4 uid="uid://2hbqbvrxxpyu"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="2_h5epx"]
 [ext_resource type="Texture2D" uid="uid://ddbyit1r5l5xj" path="res://Assets/Sprites/Personnage/Idle/Personnage_Idle.png" id="2_ldyfx"]
@@ -7,13 +7,18 @@
 [ext_resource type="Script" path="res://Scripts/action_base.gd" id="4_on1wx"]
 [ext_resource type="Texture2D" uid="uid://demjh14o1os2u" path="res://Assets/Sprites/Cartes/Fond_Carte.png" id="4_uio1u"]
 [ext_resource type="Script" path="res://Scripts/action_node.gd" id="5_scagp"]
+[ext_resource type="Resource" uid="uid://dvbm7771ngc77" path="res://Assets/Actions/move_down.tres" id="5_xanhb"]
 [ext_resource type="Resource" uid="uid://5gwqrax77h57" path="res://Assets/Actions/move_left.tres" id="6_iuqrl"]
-[ext_resource type="Resource" uid="uid://bofse52x8ehac" path="res://Assets/Actions/shoot_bubble.tres" id="7_k40js"]
+[ext_resource type="Resource" uid="uid://bofse52x8ehac" path="res://Assets/Actions/shoot_bubble_front.tres" id="7_k40js"]
 [ext_resource type="TileSet" uid="uid://bn2xfq8hpbt7c" path="res://Assets/Tileset/Tileset_Bubbles.tres" id="7_uet36"]
 [ext_resource type="Resource" uid="uid://dyrpaf762uyxu" path="res://Assets/Actions/move_right.tres" id="7_wlm4u"]
+[ext_resource type="Resource" uid="uid://dj5o6e3utx014" path="res://Assets/Actions/shoot_bubble_front_left.tres" id="8_e8gjd"]
+[ext_resource type="Resource" uid="uid://blelf4pnx0gli" path="res://Assets/Actions/shoot_bubble_front_right.tres" id="9_cfepf"]
 [ext_resource type="Script" path="res://Scripts/board.gd" id="9_i64tl"]
 [ext_resource type="Script" path="res://Scripts/preview.gd" id="10_7mp3v"]
+[ext_resource type="Resource" uid="uid://cpu4hwv55iyp2" path="res://Assets/Actions/move_up.tres" id="10_awdo3"]
 [ext_resource type="PackedScene" uid="uid://c7b8lams2ybn5" path="res://Scenes/Bulles/Bulle_blue.tscn" id="11_cxpcf"]
+[ext_resource type="Resource" uid="uid://cl7lqnb4ry7xu" path="res://Assets/Actions/shoot_bubble_left_right.tres" id="12_iyseg"]
 [ext_resource type="PackedScene" uid="uid://wjrrnqek0pca" path="res://Scenes/Bulles/Bulle_green.tscn" id="12_lg3k2"]
 [ext_resource type="PackedScene" uid="uid://0pykulbydmav" path="res://Scenes/Bulles/Bulle_purple.tscn" id="13_1xyp3"]
 [ext_resource type="PackedScene" uid="uid://bu82ai0esndtw" path="res://Scenes/Bulles/Bulle_red.tscn" id="14_qsq2o"]
@@ -33,7 +38,7 @@ offset_top = 265.0
 offset_right = 1142.0
 offset_bottom = 401.0
 script = ExtResource("3_3p6wp")
-cards = Array[ExtResource("4_on1wx")]([ExtResource("6_iuqrl"), ExtResource("6_iuqrl"), ExtResource("7_wlm4u"), ExtResource("7_wlm4u"), ExtResource("7_k40js"), ExtResource("7_k40js")])
+cards = Array[ExtResource("4_on1wx")]([ExtResource("5_xanhb"), ExtResource("6_iuqrl"), ExtResource("7_wlm4u"), ExtResource("10_awdo3"), ExtResource("7_k40js"), ExtResource("8_e8gjd"), ExtResource("9_cfepf"), ExtResource("12_iyseg")])
 
 [node name="ActionButton" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
 layout_mode = 2

@@ -5,7 +5,6 @@ class_name ActionButton
 	set(value):
 		action = value
 		action_icon.texture = value.icon
-		
 
 @export var bubble_scene : PackedScene
 @export var character: Character

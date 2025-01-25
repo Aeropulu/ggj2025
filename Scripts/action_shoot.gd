@@ -8,16 +8,14 @@ func do_action(char: Character) -> bool:
 	var preview: Preview = char.get_node("%Preview")
 	if not is_instance_valid(preview):
 		return false
-		
-	var bubble_node: Bulle = preview.instantiate_bubble_node()
-	if (not is_instance_valid(bubble_node)):
-		return false
 	
 	var board: Board = char.get_node("%Board")
 	
 	var last_timer: SceneTreeTimer = null
 	for dir in directions:
-		
+		var bubble_node: Bulle = preview.instantiate_bubble_node()
+		if (not is_instance_valid(bubble_node)):
+			continue
 		bubble_node.position = Vector2.ZERO
 		var curve := board.calculate_path(char.get_tile_pos(), dir)
 		var path: Path2D = Path2D.new()
