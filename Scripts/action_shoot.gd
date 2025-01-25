@@ -62,5 +62,4 @@ func do_action(char: Character) -> bool:
 			last_timer.timeout.connect(func(): carrier.following_path = true)
 		last_timer = board.get_tree().create_timer(delay_between_shots)
 
-	preview.change_bubble()
 	return true

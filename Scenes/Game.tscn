@@ -1,7 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://2hbqbvrxxpyu"]
+[gd_scene load_steps=18 format=4 uid="uid://2hbqbvrxxpyu"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="2_h5epx"]
 [ext_resource type="Texture2D" uid="uid://ddbyit1r5l5xj" path="res://Assets/Sprites/Personnage/Idle/Personnage_Idle.png" id="2_ldyfx"]
+[ext_resource type="Script" path="res://Scripts/deck.gd" id="3_3p6wp"]
+[ext_resource type="PackedScene" uid="uid://bdgwrvgm46y45" path="res://Scenes/ActionButton.tscn" id="3_s71h7"]
+[ext_resource type="Script" path="res://Scripts/action_base.gd" id="4_on1wx"]
 [ext_resource type="Texture2D" uid="uid://demjh14o1os2u" path="res://Assets/Sprites/Cartes/Fond_Carte.png" id="4_uio1u"]
 [ext_resource type="Script" path="res://Scripts/action_node.gd" id="5_scagp"]
 [ext_resource type="Resource" uid="uid://5gwqrax77h57" path="res://Assets/Actions/move_left.tres" id="6_iuqrl"]
@@ -24,7 +27,47 @@ _tilemap = NodePath("../Board")
 [node name="Sprite2D" type="Sprite2D" parent="Character"]
 texture = ExtResource("2_ldyfx")
 
+[node name="Deck" type="HBoxContainer" parent="."]
+offset_left = 586.0
+offset_top = 265.0
+offset_right = 1142.0
+offset_bottom = 401.0
+script = ExtResource("3_3p6wp")
+cards = Array[ExtResource("4_on1wx")]([ExtResource("6_iuqrl"), ExtResource("6_iuqrl"), ExtResource("7_wlm4u"), ExtResource("7_wlm4u"), ExtResource("7_k40js"), ExtResource("7_k40js")])
+
+[node name="ActionButton" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
+layout_mode = 2
+action = ExtResource("6_iuqrl")
+character = NodePath("../../Character")
+preview = NodePath("../../Preview")
+deck = NodePath("..")
+
+[node name="ActionButton2" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
+layout_mode = 2
+action = ExtResource("6_iuqrl")
+bubble_scene = ExtResource("12_lg3k2")
+character = NodePath("../../Character")
+preview = NodePath("../../Preview")
+deck = NodePath("..")
+
+[node name="ActionButton3" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
+layout_mode = 2
+action = ExtResource("6_iuqrl")
+bubble_scene = ExtResource("13_1xyp3")
+character = NodePath("../../Character")
+preview = NodePath("../../Preview")
+deck = NodePath("..")
+
+[node name="ActionButton4" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
+layout_mode = 2
+action = ExtResource("6_iuqrl")
+bubble_scene = ExtResource("14_qsq2o")
+character = NodePath("../../Character")
+preview = NodePath("../../Preview")
+deck = NodePath("..")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 offset_left = 705.0
 offset_top = 225.0
 offset_right = 745.0
