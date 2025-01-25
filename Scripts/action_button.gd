@@ -26,12 +26,14 @@ func _on_pressed() -> void:
 	if (not is_instance_valid(character) or not is_instance_valid(action)):
 		return
 	action.do_action(character)
+	await get_tree().create_timer(0.2).timeout
 	if (is_instance_valid(preview)):
 		preview.current_bubble = bubble_scene.instantiate()
 	if is_instance_valid(deck):
 		action = deck.draw_card(action)
 	_on_mouse_exited()
 	_on_mouse_entered()
+	character.advance()
 
 func _on_mouse_entered() -> void:
 	action_preview = action.make_preview(character)

@@ -7,6 +7,7 @@ class_name ActionMove
 func do_action(char: Character)-> bool:
 	char.move_to(char.get_tile_pos() + relative_movement)
 	# TODO: check collisions
+	action_done.emit()
 	return true
 
 func make_preview(_char: Character)-> Node2D:

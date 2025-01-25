@@ -22,3 +22,6 @@ func get_tile_pos() -> Vector2i:
 	if (not is_instance_valid(_tilemap)):
 		return Vector2i.ZERO
 	return _tilemap.local_to_map(self.position)
+
+func advance() -> void:
+	move_to(_tilemap.local_to_map(position) + Vector2i.UP)

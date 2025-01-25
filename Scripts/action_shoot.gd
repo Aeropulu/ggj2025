@@ -59,7 +59,7 @@ func do_action(char: Character) -> bool:
 		else:
 			last_timer.timeout.connect(func(): carrier.following_path = true)
 		last_timer = board.get_tree().create_timer(delay_between_shots)
-
+	last_timer.timeout.connect(func(): action_done.emit())
 	return true
 
 func make_preview(char: Character)-> Node2D:
