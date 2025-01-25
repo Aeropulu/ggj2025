@@ -6,3 +6,6 @@ class_name ActionBase
 # Override this
 func do_action(_char: Character)-> bool:
 	return false
+
+func make_preview(_char: Character)-> Node2D:
+	return null

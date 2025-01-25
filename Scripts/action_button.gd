@@ -12,6 +12,8 @@ class_name ActionButton
 @export var preview: Preview
 @export var action_icon:TextureRect
 @export var deck:Deck
+
+var action_preview:Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if is_instance_valid(deck):
@@ -29,11 +31,15 @@ func _on_pressed() -> void:
 		preview.current_bubble = bubble_scene.instantiate()
 	if is_instance_valid(deck):
 		action = deck.draw_card(action)
-		
+	_on_mouse_exited()
+	_on_mouse_entered()
 
 func _on_mouse_entered() -> void:
-	pass # Replace with function body.
+	action_preview = action.make_preview(character)
+	if is_instance_valid(action_preview):
+		character.add_child(action_preview)
 
 
 func _on_mouse_exited() -> void:
-	pass # Replace with function body.
+	if is_instance_valid(action_preview):
+		action_preview.queue_free()

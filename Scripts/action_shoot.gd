@@ -63,3 +63,15 @@ func do_action(char: Character) -> bool:
 		last_timer = board.get_tree().create_timer(delay_between_shots)
 
 	return true
+
+func make_preview(char: Character)-> Node2D:
+	var board: Board = char.get_node("%Board")
+	var preview_node := Node2D.new()
+	for dir in directions:
+		var curve := board.calculate_path(char.get_tile_pos(), dir)
+		var line := Line2D.new()
+		line.width = 4
+		for i in range(0, curve.point_count):
+			line.add_point(curve.get_point_position(i) - char.position)
+		preview_node.add_child(line)
+	return preview_node
