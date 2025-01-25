@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cr5k4ucdx3yyy"]
+[gd_scene load_steps=31 format=3 uid="uid://cr5k4ucdx3yyy"]
 
 [ext_resource type="Texture2D" uid="uid://1pkvu1jydgg0" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Personnage_Concentre.png" id="1_2t0sf"]
 [ext_resource type="Texture2D" uid="uid://rsayj6h6bg8r" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_Fond.png" id="1_68act"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cpyerfhtpwl4w" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_Barman.png" id="2_w2j8h"]
 [ext_resource type="Texture2D" uid="uid://c7yf6870iq2pr" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_PirateMid.png" id="3_etue2"]
 [ext_resource type="Texture2D" uid="uid://bm0dlb4g1boyw" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Personnage_Regard_Bouchon.png" id="3_grxx0"]
+[ext_resource type="Texture2D" uid="uid://dk8akiaq8hv0t" path="res://Assets/Sprites/Introduction/Shot_05/Shot_05_Joe_Ooooooh.png" id="4_smcfe"]
 [ext_resource type="Texture2D" uid="uid://d05go1nleyqju" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_PirateAVDroite.png" id="4_ymfbt"]
 [ext_resource type="Texture2D" uid="uid://v4noyfiec6bf" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_PirateAVGauche.png" id="5_a86h4"]
+[ext_resource type="Texture2D" uid="uid://cm6w3ee7olhfe" path="res://Assets/Sprites/Introduction/Shot_05/Shot_05_Joe_Waow.png" id="5_tyikx"]
 [ext_resource type="Texture2D" uid="uid://dhrijqc2ncdbn" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_Bras PirateAV Gauche.png" id="6_hb3b6"]
 [ext_resource type="Texture2D" uid="uid://b45hitqstblhb" path="res://Assets/Sprites/Introduction/Shot_02/Shot_02_ArPlan.png" id="7_wrgh0"]
 [ext_resource type="Texture2D" uid="uid://jx4bxw45nbkk" path="res://Assets/Sprites/Introduction/Shot_02/Shot_02_MidPlan.png" id="8_eny4h"]
@@ -24,10 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://cw0qdf8sbont2" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Main.png" id="22_r5yoo"]
 [ext_resource type="Texture2D" uid="uid://bcacx8swkuyiu" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Mousse_Droite.png" id="23_088cp"]
 [ext_resource type="Texture2D" uid="uid://bkfdsghgu5dxn" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Mousse_Avant.png" id="24_ym7m8"]
+[ext_resource type="Texture2D" uid="uid://ccx1uvj7e6ue4" path="res://Assets/Sprites/Introduction/Shot_05/Shot_05_Main.png" id="27_a4if7"]
 
 [sub_resource type="Animation" id="Animation_vnefm"]
 resource_name = "Introduction"
-length = 15.0
+length = 18.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -243,6 +246,102 @@ tracks/17/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Shot_04:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(13.9, 13.9333, 14.9, 14.9333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Shot_04/TextRect_Main:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(14.4, 14.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(503, 306), Vector2(1033, 455)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Shot_04/TextRect_Mousse_Droite:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(13.9333, 14.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1944, 93), Vector2(1855, 166)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Shot_04/TextRect_MousseAv:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(13.9333, 14.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1392, 351), Vector2(1284, 262)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Shot_04/TextRect_MousseArr:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(13.9333, 14.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(906, 125), Vector2(1023, 176)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Shot_05/TextRect_Main:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(14.9333, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2253, 776), Vector2(2253, 690)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Shot_05/TextRect_Joe:texture")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(16.2667, 16.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_smcfe"), ExtResource("5_tyikx")]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Shot_05:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(14.9, 14.9333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_60r0o"]
@@ -463,6 +562,102 @@ tracks/17/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Shot_04:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Shot_04/TextRect_Main:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(725, 360)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Shot_04/TextRect_Mousse_Droite:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1855, 166)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Shot_04/TextRect_MousseAv:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1284, 262)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Shot_04/TextRect_MousseArr:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1023, 176)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Shot_05/TextRect_Main:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2253, 776)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Shot_05/TextRect_Joe:texture")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_smcfe")]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Shot_05:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8skuy"]
 _data = {
@@ -642,6 +837,7 @@ offset_bottom = 1344.0
 texture = ExtResource("18_40m0m")
 
 [node name="Shot_04" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -669,10 +865,10 @@ texture = ExtResource("21_l3l1o")
 
 [node name="TextRect_Main" type="TextureRect" parent="Shot_04"]
 layout_mode = 0
-offset_left = 817.0
-offset_top = 287.0
-offset_right = 1358.0
-offset_bottom = 806.0
+offset_left = 725.0
+offset_top = 360.0
+offset_right = 1266.0
+offset_bottom = 879.0
 texture = ExtResource("22_r5yoo")
 
 [node name="TextRect_Mousse_Droite" type="TextureRect" parent="Shot_04"]
@@ -690,6 +886,33 @@ offset_top = 262.0
 offset_right = 3092.0
 offset_bottom = 1353.0
 texture = ExtResource("24_ym7m8")
+
+[node name="Shot_05" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Shot_05"]
+layout_mode = 0
+offset_right = 4404.0
+offset_bottom = 1345.0
+
+[node name="TextRect_Joe" type="TextureRect" parent="Shot_05"]
+layout_mode = 0
+offset_left = 1058.0
+offset_top = 262.0
+offset_right = 2402.0
+offset_bottom = 1429.0
+texture = ExtResource("4_smcfe")
+
+[node name="TextRect_Main" type="TextureRect" parent="Shot_05"]
+layout_mode = 0
+offset_left = 2253.0
+offset_top = 776.0
+offset_right = 2853.0
+offset_bottom = 1440.0
+texture = ExtResource("27_a4if7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1436, 833)

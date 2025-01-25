@@ -20,3 +20,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
+
+[editor]
+
+movie_writer/movie_file="Z:/GGJ 2025/Godot/Art/Video/Introduction.avi"
