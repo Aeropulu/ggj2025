@@ -8,6 +8,7 @@ func do_action(char: Character) -> bool:
 		return false
 	var bubble_node: Bulle = bubble_scene.instantiate()
 	bubble_node.position = char.position
-	bubble_node.velocity = Vector2.UP * 200.0
-	char.get_tree().root.add_child(bubble_node)
+	var board: Board = char.get_node("%Board")
+	var path := board.calculate_path(char.get_tile_pos(), Vector2i.UP)
+	path.add_child(bubble_node)
 	return true

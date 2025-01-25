@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://2hbqbvrxxpyu"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="2_h5epx"]
-[ext_resource type="Texture2D" uid="uid://celhr078air5h" path="res://Assets/Sprites/Personnage/Idle/Personnage.png" id="3_5lij3"]
+[ext_resource type="Texture2D" uid="uid://ddbyit1r5l5xj" path="res://Assets/Sprites/Personnage/Idle/Personnage_Idle.png" id="2_ldyfx"]
 [ext_resource type="Texture2D" uid="uid://demjh14o1os2u" path="res://Assets/Sprites/Cartes/Fond_Carte.png" id="4_uio1u"]
 [ext_resource type="Script" path="res://Scripts/action_node.gd" id="5_scagp"]
 [ext_resource type="Resource" uid="uid://5gwqrax77h57" path="res://Assets/Actions/move_left.tres" id="6_iuqrl"]
@@ -17,7 +17,7 @@ script = ExtResource("2_h5epx")
 _tilemap = NodePath("../Board")
 
 [node name="Sprite2D" type="Sprite2D" parent="Character"]
-texture = ExtResource("3_5lij3")
+texture = ExtResource("2_ldyfx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_left = 705.0
@@ -68,6 +68,7 @@ char = NodePath("../../../Character")
 action = ExtResource("7_k40js")
 
 [node name="Board" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
 tile_map_data = PackedByteArray("AAACAAAAAAAAAAAAAQAFAAMAAAAAAAAAAQAEAAMAAAAAAAAAAQADAAMAAAAAAAAAAQACAAMAAAAAAAAAAQACAAIAAAAAAAAAAQACAAEAAAAAAAAAAQADAAEAAAAAAAAAAQAEAAEAAAAAAAAAAQAFAAEAAAAAAAAAAQAGAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAIAAIAAAAAAAAAAQAJAAIAAAAAAAAAAQAJAAEAAAAAAAAAAQAJAAAAAAAAAAAAAQAIAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAGAAAAAAAAAAAAAQAGAAIAAAAAAAAAAQAGAAMAAAAAAAAAAQAHAAMAAAAAAAAAAQAIAAMAAAAAAAAAAQAHAAQAAAAAAAAAAQAIAAQAAAAAAAAAAQAJAAQAAAAAAAAAAQAJAAMAAAAAAAAAAQAHAAIAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQADAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQACAAQAAAAAAAAAAQADAAIAAAAAAAAAAQAEAAIAAAAAAAAAAQAEAAAAAAAAAAAAAQADAAAAAAAAAAAAAQAFAAAAAAAAAAAAAQAIAAEAAAAAAAAAAQA=")
 tile_set = ExtResource("7_uet36")
 script = ExtResource("9_i64tl")

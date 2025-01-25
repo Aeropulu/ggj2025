@@ -1,4 +1,5 @@
 extends TileMapLayer
+class_name Board
 
 var width: int = 8
 var height: int = 16
@@ -14,6 +15,8 @@ func _process(delta: float) -> void:
 
 func calculate_path(start_pos: Vector2i, direction: Vector2i) -> Path2D:
 	var path := Path2D.new()
+	var curve := Curve2D.new()
+	curve.add_point(map_to_local(start_pos))
 	var ended := false
 	var pos := start_pos
 	while (not ended):
@@ -21,4 +24,9 @@ func calculate_path(start_pos: Vector2i, direction: Vector2i) -> Path2D:
 		if (next_pos.y < 0 or next_pos.y > height
 				or next_pos.x < 0 or next_pos.x > width):
 			ended = true
+		else:
+			curve.add_point(map_to_local(next_pos))
+			pos = next_pos
+	path.curve = curve
+	add_child(path)
 	return path

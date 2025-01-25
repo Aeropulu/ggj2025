@@ -4,7 +4,10 @@
 [ext_resource type="Script" path="res://Scripts/bulle.gd" id="1_xc66x"]
 [ext_resource type="Texture2D" uid="uid://ekixcf3u0wm6" path="res://Assets/Sprites/Diamants/Gemme_Bleue.png" id="2_ed78q"]
 
-[node name="Bulle" type="Node2D"]
+[node name="Bulle" type="PathFollow2D"]
+rotates = false
+cubic_interp = false
+loop = false
 script = ExtResource("1_xc66x")
 
 [node name="Sprite_Bulle" type="Sprite2D" parent="."]
