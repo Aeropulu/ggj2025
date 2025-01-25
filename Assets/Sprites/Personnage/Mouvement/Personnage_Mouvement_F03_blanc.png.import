@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://celhr078air5h"
-path="res://.godot/imported/Personnage.png-74170c7325281715b1fd39383785fc7b.ctex"
+uid="uid://c8audlykjbnvj"
+path="res://.godot/imported/Personnage_Mouvement_F03_blanc.png-6caf3794b389ae120c8f000131d96780.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Personnage/Idle/Personnage.png"
-dest_files=["res://.godot/imported/Personnage.png-74170c7325281715b1fd39383785fc7b.ctex"]
+source_file="res://Assets/Sprites/Personnage/Mouvement/Personnage_Mouvement_F03_blanc.png"
+dest_files=["res://.godot/imported/Personnage_Mouvement_F03_blanc.png-6caf3794b389ae120c8f000131d96780.ctex"]
 
 [params]
 
