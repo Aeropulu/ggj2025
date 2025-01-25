@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdtu44viwppyq"]
+
+[ext_resource type="Script" path="res://Scripts/bubble_carrier.gd" id="1_6mbig"]
+
+[node name="BubbleCarrier" type="PathFollow2D"]
+script = ExtResource("1_6mbig")

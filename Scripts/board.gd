@@ -14,8 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func calculate_path(start_pos: Vector2i, direction: Vector2i, node_to_add: Node2D = null) -> Path2D:
-	var path := Path2D.new()
+func calculate_path(start_pos: Vector2i, direction: Vector2i) -> Curve2D:
 	var curve := Curve2D.new()
 	curve.add_point(map_to_local(start_pos))
 	var ended := false
@@ -35,22 +34,22 @@ func calculate_path(start_pos: Vector2i, direction: Vector2i, node_to_add: Node2
 		else:
 			curve.add_point(map_to_local(next_pos))
 			pos = next_pos
-	path.curve = curve
-	add_child(path)
-	var new_node: Node2D = node_to_add.duplicate()
-	new_node.position = map_to_local(pos)
-	new_node.visible = false
-	add_child(new_node)
-	if new_node is Bulle:
-		var matching_bubbles:Array[Bulle] = get_matching_bubbles(pos)
-		if matching_bubbles.size() >= min_to_match:
-			var new_parent: Node2D = Node2D.new()
-			add_child(new_parent)
-			for bubble in matching_bubbles:
-				remove_child(bubble)
-				new_parent.add_child(bubble)
-			node_to_add.matching_bubbles_parent = new_parent
-	return path
+	#path.curve = curve
+	#add_child(path)
+	#var new_node: Node2D = node_to_add.duplicate()
+	#new_node.position = map_to_local(pos)
+	#new_node.visible = false
+	#add_child(new_node)
+	#if new_node is Bulle:
+		#var matching_bubbles:Array[Bulle] = get_matching_bubbles(pos)
+		#if matching_bubbles.size() >= min_to_match:
+			#var new_parent: Node2D = Node2D.new()
+			#add_child(new_parent)
+			#for bubble in matching_bubbles:
+				#remove_child(bubble)
+				#new_parent.add_child(bubble)
+			#new_node.matching_bubbles_parent = new_parent
+	return curve
 
 func get_bubble(tile_coord: Vector2i) -> Bulle:
 	var bulle: Bulle = null
