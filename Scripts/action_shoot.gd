@@ -8,16 +8,14 @@ func do_action(char: Character) -> bool:
 	var preview: Preview = char.get_node("%Preview")
 	if not is_instance_valid(preview):
 		return false
-		
-	var bubble_node: Bulle = preview.instantiate_bubble_node()
-	if (not is_instance_valid(bubble_node)):
-		return false
 	
 	var board: Board = char.get_node("%Board")
 	
 	var last_timer: SceneTreeTimer = null
 	for dir in directions:
-		
+		var bubble_node: Bulle = preview.instantiate_bubble_node()
+		if (not is_instance_valid(bubble_node)):
+			continue
 		bubble_node.position = Vector2.ZERO
 		var curve := board.calculate_path(char.get_tile_pos(), dir)
 		var path: Path2D = Path2D.new()
@@ -61,5 +59,17 @@ func do_action(char: Character) -> bool:
 		else:
 			last_timer.timeout.connect(func(): carrier.following_path = true)
 		last_timer = board.get_tree().create_timer(delay_between_shots)
-
+	last_timer.timeout.connect(func(): action_done.emit())
 	return true
+
+func make_preview(char: Character)-> Node2D:
+	var board: Board = char.get_node("%Board")
+	var preview_node := Node2D.new()
+	for dir in directions:
+		var curve := board.calculate_path(char.get_tile_pos(), dir)
+		var line := Line2D.new()
+		line.width = 4
+		for i in range(0, curve.point_count):
+			line.add_point(curve.get_point_position(i) - char.position)
+		preview_node.add_child(line)
+	return preview_node
