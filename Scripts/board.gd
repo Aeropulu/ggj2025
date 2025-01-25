@@ -31,7 +31,12 @@ func calculate_path(start_pos: Vector2i, direction: Vector2i) -> Curve2D:
 		if (next_pos.y < 0 or next_pos.y > height
 				or get_bubble(next_pos) != null):
 			ended = true
-		else:
+		
+		if direction.x != 0 and direction.y != 0:
+			if (get_bubble(pos + Vector2i(0, direction.y)) != null
+					and get_bubble(pos + Vector2i(direction.x, 0)) != null):
+				ended = true
+		if not ended:
 			curve.add_point(map_to_local(next_pos))
 			pos = next_pos
 	#path.curve = curve
