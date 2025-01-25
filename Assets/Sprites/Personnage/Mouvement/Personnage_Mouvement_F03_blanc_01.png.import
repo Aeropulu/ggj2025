@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do8gcgnro8u5s"
-path="res://.godot/imported/Personnage_Idle_Bulle.png-d0bd12d0e5156393f330e83815514dc4.ctex"
+uid="uid://bue554bc0xuru"
+path="res://.godot/imported/Personnage_Mouvement_F03_blanc_01.png-2114f6164189fd59118372503e6af0b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Personnage/Idle/Personnage_Idle_Bulle.png"
-dest_files=["res://.godot/imported/Personnage_Idle_Bulle.png-d0bd12d0e5156393f330e83815514dc4.ctex"]
+source_file="res://Assets/Sprites/Personnage/Mouvement/Personnage_Mouvement_F03_blanc_01.png"
+dest_files=["res://.godot/imported/Personnage_Mouvement_F03_blanc_01.png-2114f6164189fd59118372503e6af0b5.ctex"]
 
 [params]
 
