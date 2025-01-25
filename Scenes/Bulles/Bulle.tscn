@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://wpk88mtdhmqf"]
+
+[ext_resource type="Texture2D" uid="uid://gwbcgvu2jv8h" path="res://Assets/Sprites/Bulles/Bulle_Greyscale.png" id="1_umhm7"]
+[ext_resource type="Script" path="res://Scripts/bulle.gd" id="1_xc66x"]
+[ext_resource type="Texture2D" uid="uid://ekixcf3u0wm6" path="res://Assets/Sprites/Diamants/Gemme_Bleue.png" id="2_ed78q"]
+
+[node name="Bulle" type="PathFollow2D"]
+rotates = false
+cubic_interp = false
+loop = false
+script = ExtResource("1_xc66x")
+
+[node name="Sprite_Bulle" type="Sprite2D" parent="."]
+texture = ExtResource("1_umhm7")
+
+[node name="Sprite_Diamant" type="Sprite2D" parent="."]
+texture = ExtResource("2_ed78q")

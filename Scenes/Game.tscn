@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=4 uid="uid://2hbqbvrxxpyu"]
+
+[ext_resource type="Script" path="res://Scripts/character.gd" id="2_h5epx"]
+[ext_resource type="Texture2D" uid="uid://ddbyit1r5l5xj" path="res://Assets/Sprites/Personnage/Idle/Personnage_Idle.png" id="2_ldyfx"]
+[ext_resource type="Texture2D" uid="uid://demjh14o1os2u" path="res://Assets/Sprites/Cartes/Fond_Carte.png" id="4_uio1u"]
+[ext_resource type="Script" path="res://Scripts/action_node.gd" id="5_scagp"]
+[ext_resource type="Resource" uid="uid://5gwqrax77h57" path="res://Assets/Actions/move_left.tres" id="6_iuqrl"]
+[ext_resource type="Resource" uid="uid://bofse52x8ehac" path="res://Assets/Actions/shoot_bubble.tres" id="7_k40js"]
+[ext_resource type="TileSet" uid="uid://bn2xfq8hpbt7c" path="res://Assets/Tileset/Tileset_Bubbles.tres" id="7_uet36"]
+[ext_resource type="Resource" uid="uid://dyrpaf762uyxu" path="res://Assets/Actions/move_right.tres" id="7_wlm4u"]
+[ext_resource type="Script" path="res://Scripts/board.gd" id="9_i64tl"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Character" type="Node2D" parent="." node_paths=PackedStringArray("_tilemap")]
+script = ExtResource("2_h5epx")
+_tilemap = NodePath("../Board")
+
+[node name="Sprite2D" type="Sprite2D" parent="Character"]
+texture = ExtResource("2_ldyfx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 705.0
+offset_top = 225.0
+offset_right = 745.0
+offset_bottom = 265.0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "<="
+icon = ExtResource("4_uio1u")
+flat = true
+icon_alignment = 1
+
+[node name="ActionNode" type="Node" parent="HBoxContainer/Button" node_paths=PackedStringArray("char")]
+script = ExtResource("5_scagp")
+char = NodePath("../../../Character")
+action = ExtResource("6_iuqrl")
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "=>"
+icon = ExtResource("4_uio1u")
+flat = true
+icon_alignment = 1
+
+[node name="ActionNode" type="Node" parent="HBoxContainer/Button2" node_paths=PackedStringArray("char")]
+script = ExtResource("5_scagp")
+char = NodePath("../../../Character")
+action = ExtResource("7_wlm4u")
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "PEW"
+icon = ExtResource("4_uio1u")
+flat = true
+icon_alignment = 1
+
+[node name="ActionNode" type="Node" parent="HBoxContainer/Button3" node_paths=PackedStringArray("char")]
+script = ExtResource("5_scagp")
+char = NodePath("../../../Character")
+action = ExtResource("7_k40js")
+
+[node name="Board" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray("AAACAAAAAAAAAAAAAQAFAAMAAAAAAAAAAQAEAAMAAAAAAAAAAQADAAMAAAAAAAAAAQACAAMAAAAAAAAAAQACAAIAAAAAAAAAAQACAAEAAAAAAAAAAQADAAEAAAAAAAAAAQAEAAEAAAAAAAAAAQAFAAEAAAAAAAAAAQAGAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAIAAIAAAAAAAAAAQAJAAIAAAAAAAAAAQAJAAEAAAAAAAAAAQAJAAAAAAAAAAAAAQAIAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAGAAAAAAAAAAAAAQAGAAIAAAAAAAAAAQAGAAMAAAAAAAAAAQAHAAMAAAAAAAAAAQAIAAMAAAAAAAAAAQAHAAQAAAAAAAAAAQAIAAQAAAAAAAAAAQAJAAQAAAAAAAAAAQAJAAMAAAAAAAAAAQAHAAIAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQADAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQACAAQAAAAAAAAAAQADAAIAAAAAAAAAAQAEAAIAAAAAAAAAAQAEAAAAAAAAAAAAAQADAAAAAAAAAAAAAQAFAAAAAAAAAAAAAQAIAAEAAAAAAAAAAQA=")
+tile_set = ExtResource("7_uet36")
+script = ExtResource("9_i64tl")
+
+[connection signal="pressed" from="HBoxContainer/Button" to="HBoxContainer/Button/ActionNode" method="do_action"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="HBoxContainer/Button2/ActionNode" method="do_action"]
+[connection signal="pressed" from="HBoxContainer/Button3" to="HBoxContainer/Button3/ActionNode" method="do_action"]

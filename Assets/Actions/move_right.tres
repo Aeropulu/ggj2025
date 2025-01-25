@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ActionMove" load_steps=2 format=3 uid="uid://dyrpaf762uyxu"]
+
+[ext_resource type="Script" path="res://Scripts/action_move.gd" id="1_nqt5h"]
+
+[resource]
+script = ExtResource("1_nqt5h")
+relative_movement = Vector2i(1, 0)

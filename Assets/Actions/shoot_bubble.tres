@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="action_shoot" load_steps=3 format=3 uid="uid://bofse52x8ehac"]
+
+[ext_resource type="PackedScene" uid="uid://wpk88mtdhmqf" path="res://Scenes/Bulles/Bulle.tscn" id="1_lxw55"]
+[ext_resource type="Script" path="res://Scripts/action_shoot.gd" id="1_pkt4k"]
+
+[resource]
+script = ExtResource("1_pkt4k")
+bubble_scene = ExtResource("1_lxw55")
+direction = Vector2i(1, -1)
