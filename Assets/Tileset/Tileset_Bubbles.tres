@@ -1,9 +1,15 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bn2xfq8hpbt7c"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://bn2xfq8hpbt7c"]
 
-[ext_resource type="PackedScene" uid="uid://wpk88mtdhmqf" path="res://Scenes/Bulles/Bulle.tscn" id="1_p6uak"]
+[ext_resource type="PackedScene" uid="uid://c7b8lams2ybn5" path="res://Scenes/Bulles/Bulle_blue.tscn" id="1_hwohr"]
+[ext_resource type="PackedScene" uid="uid://wjrrnqek0pca" path="res://Scenes/Bulles/Bulle_green.tscn" id="2_bi117"]
+[ext_resource type="PackedScene" uid="uid://0pykulbydmav" path="res://Scenes/Bulles/Bulle_purple.tscn" id="3_b0nlp"]
+[ext_resource type="PackedScene" uid="uid://bu82ai0esndtw" path="res://Scenes/Bulles/Bulle_red.tscn" id="4_1lgxf"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_rxs4x"]
-scenes/1/scene = ExtResource("1_p6uak")
+scenes/2/scene = ExtResource("1_hwohr")
+scenes/3/scene = ExtResource("2_bi117")
+scenes/4/scene = ExtResource("3_b0nlp")
+scenes/5/scene = ExtResource("4_1lgxf")
 
 [resource]
 tile_size = Vector2i(64, 64)

@@ -3,9 +3,8 @@ class_name Bulle
 
 var board: Board = null
 var matching_bubbles_parent: Node2D
-var matching_bubbles: Array[Bulle] = []
 
-var color_id: int = 0
+@export var color_id: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

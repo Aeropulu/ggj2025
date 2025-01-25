@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://2hbqbvrxxpyu"]
+[gd_scene load_steps=15 format=4 uid="uid://2hbqbvrxxpyu"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="2_h5epx"]
 [ext_resource type="Texture2D" uid="uid://ddbyit1r5l5xj" path="res://Assets/Sprites/Personnage/Idle/Personnage_Idle.png" id="2_ldyfx"]
@@ -9,6 +9,11 @@
 [ext_resource type="TileSet" uid="uid://bn2xfq8hpbt7c" path="res://Assets/Tileset/Tileset_Bubbles.tres" id="7_uet36"]
 [ext_resource type="Resource" uid="uid://dyrpaf762uyxu" path="res://Assets/Actions/move_right.tres" id="7_wlm4u"]
 [ext_resource type="Script" path="res://Scripts/board.gd" id="9_i64tl"]
+[ext_resource type="Script" path="res://Scripts/preview.gd" id="10_7mp3v"]
+[ext_resource type="PackedScene" uid="uid://c7b8lams2ybn5" path="res://Scenes/Bulles/Bulle_blue.tscn" id="11_cxpcf"]
+[ext_resource type="PackedScene" uid="uid://wjrrnqek0pca" path="res://Scenes/Bulles/Bulle_green.tscn" id="12_lg3k2"]
+[ext_resource type="PackedScene" uid="uid://0pykulbydmav" path="res://Scenes/Bulles/Bulle_purple.tscn" id="13_1xyp3"]
+[ext_resource type="PackedScene" uid="uid://bu82ai0esndtw" path="res://Scenes/Bulles/Bulle_red.tscn" id="14_qsq2o"]
 
 [node name="Game" type="Node2D"]
 
@@ -69,9 +74,15 @@ action = ExtResource("7_k40js")
 
 [node name="Board" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
-tile_map_data = PackedByteArray("AAACAAAAAAAAAAAAAQAIAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAGAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQADAAAAAAAAAAAAAQAFAAAAAAAAAAAAAQAJAAAAAAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAgABAAAAAAAAAAAAAgABAAEAAAAAAAAAAgACAAAAAAAAAAAAAwADAAAAAAAAAAAAAwADAAEAAAAAAAAAAwACAAEAAAAAAAAAAwAEAAAAAAAAAAAABAAEAAEAAAAAAAAABAAFAAEAAAAAAAAABAAFAAAAAAAAAAAABAAGAAAAAAAAAAAABQAHAAAAAAAAAAAABQAHAAEAAAAAAAAABQAGAAEAAAAAAAAABQAAAAEAAAAAAAAAAgA=")
 tile_set = ExtResource("7_uet36")
 script = ExtResource("9_i64tl")
+
+[node name="Preview" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(808, 127)
+script = ExtResource("10_7mp3v")
+bubbles = Array[PackedScene]([ExtResource("11_cxpcf"), ExtResource("12_lg3k2"), ExtResource("13_1xyp3"), ExtResource("14_qsq2o")])
 
 [connection signal="pressed" from="HBoxContainer/Button" to="HBoxContainer/Button/ActionNode" method="do_action"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="HBoxContainer/Button2/ActionNode" method="do_action"]

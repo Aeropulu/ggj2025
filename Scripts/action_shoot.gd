@@ -1,20 +1,23 @@
 extends ActionBase
 class_name action_shoot
 
-@export var bubble_scene: PackedScene
-
 @export var directions: Array[Vector2i]
 @export var delay_between_shots: float = 0.1
 
 func do_action(char: Character) -> bool:
-	if (not is_instance_valid(bubble_scene)):
+	var preview: Preview = char.get_node("%Preview")
+	if not is_instance_valid(preview):
+		return false
+		
+	var bubble_node: Bulle = preview.instantiate_bubble_node()
+	if (not is_instance_valid(bubble_node)):
 		return false
 	
 	var board: Board = char.get_node("%Board")
 	
 	var last_timer: SceneTreeTimer = null
 	for dir in directions:
-		var bubble_node: Bulle = bubble_scene.instantiate()
+		
 		bubble_node.position = Vector2.ZERO
 		bubble_node.board = board
 		var curve := board.calculate_path(char.get_tile_pos(), dir)
@@ -51,4 +54,5 @@ func do_action(char: Character) -> bool:
 			last_timer.timeout.connect(func(): carrier.following_path = true)
 		last_timer = board.get_tree().create_timer(delay_between_shots)
 
+	preview.change_bubble()
 	return true
