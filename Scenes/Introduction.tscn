@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cr5k4ucdx3yyy"]
+[gd_scene load_steps=28 format=3 uid="uid://cr5k4ucdx3yyy"]
 
 [ext_resource type="Texture2D" uid="uid://1pkvu1jydgg0" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Personnage_Concentre.png" id="1_2t0sf"]
 [ext_resource type="Texture2D" uid="uid://rsayj6h6bg8r" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_Fond.png" id="1_68act"]
@@ -19,6 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://dcy5b8qjm38ds" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Main_Gauche.png" id="16_im1c6"]
 [ext_resource type="Texture2D" uid="uid://q2o0pbekofog" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Mousse_Droite.png" id="17_twm3w"]
 [ext_resource type="Texture2D" uid="uid://bnwesdn5fu0fh" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Mousse_Gauche.png" id="18_40m0m"]
+[ext_resource type="Texture2D" uid="uid://dunekqf5jnkqp" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Mousse_Arr.png" id="20_d27na"]
+[ext_resource type="Texture2D" uid="uid://ulnnrljvls07" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Bouchon.png" id="21_l3l1o"]
+[ext_resource type="Texture2D" uid="uid://cw0qdf8sbont2" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Main.png" id="22_r5yoo"]
+[ext_resource type="Texture2D" uid="uid://bcacx8swkuyiu" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Mousse_Droite.png" id="23_088cp"]
+[ext_resource type="Texture2D" uid="uid://bkfdsghgu5dxn" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Mousse_Avant.png" id="24_ym7m8"]
 
 [sub_resource type="Animation" id="Animation_vnefm"]
 resource_name = "Introduction"
@@ -186,7 +191,7 @@ tracks/13/path = NodePath("Shot_03:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 9.13333, 9.16667, 14.6, 14.6333),
+"times": PackedFloat32Array(0, 9.13333, 9.16667, 13.9, 13.9333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, false, true, true, false]
@@ -635,6 +640,56 @@ offset_top = 156.0
 offset_right = 2233.0
 offset_bottom = 1344.0
 texture = ExtResource("18_40m0m")
+
+[node name="Shot_04" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fond" type="ColorRect" parent="Shot_04"]
+layout_mode = 0
+offset_right = 4816.0
+offset_bottom = 1762.0
+
+[node name="TextRect_MousseArr" type="TextureRect" parent="Shot_04"]
+layout_mode = 0
+offset_left = 1023.0
+offset_top = 176.0
+offset_right = 1931.0
+offset_bottom = 810.0
+texture = ExtResource("20_d27na")
+
+[node name="TextRect_Bouchon" type="TextureRect" parent="Shot_04"]
+layout_mode = 0
+offset_left = 1648.0
+offset_top = 608.0
+offset_right = 2110.0
+offset_bottom = 1038.0
+texture = ExtResource("21_l3l1o")
+
+[node name="TextRect_Main" type="TextureRect" parent="Shot_04"]
+layout_mode = 0
+offset_left = 817.0
+offset_top = 287.0
+offset_right = 1358.0
+offset_bottom = 806.0
+texture = ExtResource("22_r5yoo")
+
+[node name="TextRect_Mousse_Droite" type="TextureRect" parent="Shot_04"]
+layout_mode = 0
+offset_left = 1855.0
+offset_top = 166.0
+offset_right = 3055.0
+offset_bottom = 981.0
+texture = ExtResource("23_088cp")
+
+[node name="TextRect_MousseAv" type="TextureRect" parent="Shot_04"]
+layout_mode = 0
+offset_left = 1284.0
+offset_top = 262.0
+offset_right = 3092.0
+offset_bottom = 1353.0
+texture = ExtResource("24_ym7m8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1436, 833)
