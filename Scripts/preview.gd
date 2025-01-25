@@ -20,6 +20,8 @@ func change_bubble() -> void:
 	if rand == current_id:
 		rand = randi_range(0, bubbles_count - 1)
 	current_id = rand
+	if is_instance_valid(current_bubble):
+		current_bubble.queue_free()
 	current_bubble = bubbles[current_id].instantiate()
 	add_child(current_bubble)
 

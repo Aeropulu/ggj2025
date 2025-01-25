@@ -19,7 +19,6 @@ func do_action(char: Character) -> bool:
 	for dir in directions:
 		
 		bubble_node.position = Vector2.ZERO
-		bubble_node.board = board
 		var curve := board.calculate_path(char.get_tile_pos(), dir)
 		var path: Path2D = Path2D.new()
 		path.curve = curve
@@ -40,6 +39,7 @@ func do_action(char: Character) -> bool:
 		board.add_child(tilemap_bubble)
 		
 		var matching_bubbles = board.get_matching_bubbles(board.local_to_map(final_pos))
+		
 		if matching_bubbles.size() >= board.min_to_match:
 			var new_parent: Node2D = Node2D.new()
 			board.add_child(new_parent)
@@ -47,7 +47,15 @@ func do_action(char: Character) -> bool:
 				board.remove_child(bubble)
 				new_parent.add_child(bubble)
 			tilemap_bubble.matching_bubbles_parent = new_parent
-
+		
+			var falling_bubbles = board.get_falling_bubbles()
+			var falling_parent: Node2D = Node2D.new()
+			board.add_child(falling_parent)
+			for bubble in falling_bubbles:
+				board.remove_child(bubble)
+				falling_parent.add_child(bubble)
+			tilemap_bubble.falling_bubbles_parent = falling_parent
+		
 		if last_timer == null:
 			carrier.following_path = true
 		else:
