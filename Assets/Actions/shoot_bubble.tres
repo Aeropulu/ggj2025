@@ -6,3 +6,4 @@
 [resource]
 script = ExtResource("1_pkt4k")
 bubble_scene = ExtResource("1_lxw55")
+direction = Vector2i(1, -1)
