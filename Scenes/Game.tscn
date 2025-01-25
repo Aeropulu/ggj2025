@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/character.gd" id="2_h5epx"]
 [ext_resource type="Texture2D" uid="uid://ddbyit1r5l5xj" path="res://Assets/Sprites/Personnage/Idle/Personnage_Idle.png" id="2_ldyfx"]
 [ext_resource type="Script" path="res://Scripts/deck.gd" id="3_3p6wp"]
-[ext_resource type="PackedScene" uid="uid://bdgwrvgm46y45" path="res://Scenes/ActionButton.tscn" id="3_s71h7"]
+[ext_resource type="PackedScene" path="res://Scenes/ActionButton.tscn" id="3_s71h7"]
 [ext_resource type="Script" path="res://Scripts/action_base.gd" id="4_on1wx"]
 [ext_resource type="Texture2D" uid="uid://demjh14o1os2u" path="res://Assets/Sprites/Cartes/Fond_Carte.png" id="4_uio1u"]
 [ext_resource type="Script" path="res://Scripts/action_node.gd" id="5_scagp"]
@@ -13,10 +13,10 @@
 [ext_resource type="Resource" uid="uid://dyrpaf762uyxu" path="res://Assets/Actions/move_right.tres" id="7_wlm4u"]
 [ext_resource type="Script" path="res://Scripts/board.gd" id="9_i64tl"]
 [ext_resource type="Script" path="res://Scripts/preview.gd" id="10_7mp3v"]
-[ext_resource type="PackedScene" uid="uid://c7b8lams2ybn5" path="res://Scenes/Bulles/Bulle_blue.tscn" id="11_cxpcf"]
-[ext_resource type="PackedScene" uid="uid://wjrrnqek0pca" path="res://Scenes/Bulles/Bulle_green.tscn" id="12_lg3k2"]
-[ext_resource type="PackedScene" uid="uid://0pykulbydmav" path="res://Scenes/Bulles/Bulle_purple.tscn" id="13_1xyp3"]
-[ext_resource type="PackedScene" uid="uid://bu82ai0esndtw" path="res://Scenes/Bulles/Bulle_red.tscn" id="14_qsq2o"]
+[ext_resource type="PackedScene" path="res://Scenes/Bulles/Bulle_blue.tscn" id="11_cxpcf"]
+[ext_resource type="PackedScene" path="res://Scenes/Bulles/Bulle_green.tscn" id="12_lg3k2"]
+[ext_resource type="PackedScene" path="res://Scenes/Bulles/Bulle_purple.tscn" id="13_1xyp3"]
+[ext_resource type="PackedScene" path="res://Scenes/Bulles/Bulle_red.tscn" id="14_qsq2o"]
 
 [node name="Game" type="Node2D"]
 

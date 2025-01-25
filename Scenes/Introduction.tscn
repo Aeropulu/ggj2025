@@ -1,0 +1,655 @@
+[gd_scene load_steps=23 format=3 uid="uid://cr5k4ucdx3yyy"]
+
+[ext_resource type="Texture2D" uid="uid://1pkvu1jydgg0" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Personnage_Concentre.png" id="1_2t0sf"]
+[ext_resource type="Texture2D" uid="uid://rsayj6h6bg8r" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_Fond.png" id="1_68act"]
+[ext_resource type="Texture2D" uid="uid://h0cjo20w1w4v" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Personnage_Regard_Devant.png" id="2_2crek"]
+[ext_resource type="Texture2D" uid="uid://cpyerfhtpwl4w" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_Barman.png" id="2_w2j8h"]
+[ext_resource type="Texture2D" uid="uid://c7yf6870iq2pr" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_PirateMid.png" id="3_etue2"]
+[ext_resource type="Texture2D" uid="uid://bm0dlb4g1boyw" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Personnage_Regard_Bouchon.png" id="3_grxx0"]
+[ext_resource type="Texture2D" uid="uid://d05go1nleyqju" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_PirateAVDroite.png" id="4_ymfbt"]
+[ext_resource type="Texture2D" uid="uid://v4noyfiec6bf" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_PirateAVGauche.png" id="5_a86h4"]
+[ext_resource type="Texture2D" uid="uid://dhrijqc2ncdbn" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_Bras PirateAV Gauche.png" id="6_hb3b6"]
+[ext_resource type="Texture2D" uid="uid://b45hitqstblhb" path="res://Assets/Sprites/Introduction/Shot_02/Shot_02_ArPlan.png" id="7_wrgh0"]
+[ext_resource type="Texture2D" uid="uid://jx4bxw45nbkk" path="res://Assets/Sprites/Introduction/Shot_02/Shot_02_MidPlan.png" id="8_eny4h"]
+[ext_resource type="Texture2D" uid="uid://capqx3u1hjx83" path="res://Assets/Sprites/Introduction/Shot_02/Shot_02_PremierPlan.png" id="9_qveub"]
+[ext_resource type="Texture2D" uid="uid://1msmu7jiqw7d" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Fond_Mousse.png" id="12_bx8xe"]
+[ext_resource type="Texture2D" uid="uid://b4us47u2ggn3s" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Mousse_Arr_Droite.png" id="13_yyvm1"]
+[ext_resource type="Texture2D" uid="uid://dbknbgptxjueo" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Mousse_Arr_Gauche.png" id="14_nvg5s"]
+[ext_resource type="Texture2D" uid="uid://dl6jn1qswp1g" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Main_Droite.png" id="15_upjbw"]
+[ext_resource type="Texture2D" uid="uid://dcy5b8qjm38ds" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Main_Gauche.png" id="16_im1c6"]
+[ext_resource type="Texture2D" uid="uid://q2o0pbekofog" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Mousse_Droite.png" id="17_twm3w"]
+[ext_resource type="Texture2D" uid="uid://bnwesdn5fu0fh" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Mousse_Gauche.png" id="18_40m0m"]
+
+[sub_resource type="Animation" id="Animation_vnefm"]
+resource_name = "Introduction"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 3.7, 4.2, 4.23333, 5, 8.06667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1436, 833), Vector2(1898, 613), Vector2(1898, 613), Vector2(1436, 833), Vector2(1436, 833), Vector2(2033, 748)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6, 3.7, 4.2, 4.23333, 5, 8.06667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(1, 1), Vector2(1, 1), Vector2(0.7, 0.7), Vector2(0.7, 0.7), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shot_01/TextRect_PirateBrasAVGauche:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 0.433333, 0.6, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-537, 1199), Vector2(-451, 1173), Vector2(-334, 1025), Vector2(-576, 1067), Vector2(-630, 1551)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shot_01/TextRect_PirateBrasAVDroit:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.433333, 0.6, 0.8, 1.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2302, 1238), Vector2(2058, 1188), Vector2(1849, 1001), Vector2(1896, 1065), Vector2(1968, 1467)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shot_01/TextRect_PirateBrasAVDroit:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Shot_01/TextRect_PirateBrasAVGauche:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Shot_01/TextRect_PirateAVGauche:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.266667, 0.466667, 0.666667, 1.4, 2.23333, 2.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-246, -4), Vector2(-155, 38), Vector2(-55, -55), Vector2(-55, -55), Vector2(-220, -47), Vector2(-412, -47)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Shot_01/TextRect_PirateAVDroit:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.6, 0.766667, 1.46667, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(528, 86), Vector2(528, 65), Vector2(528, 86), Vector2(-235, 86)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Shot_01/TextRect_PirateMid:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.46667, 3.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1170, 86), Vector2(903, 80)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Shot_01:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(4.2, 4.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Shot_02:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4.2, 4.23333, 9.13333, 9.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Shot_02/TextRect_PremierPlan:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 5, 8.06667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(224, 8), Vector2(224, 8), Vector2(-9, -36)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Shot_02/TextRect_MidPlan:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 5, 8.06667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(36, 0), Vector2(36, 0), Vector2(0, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Shot_03:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 9.13333, 9.16667, 14.6, 14.6333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Shot_03/TextRect_MainGauche:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(9.16667, 9.46667, 9.76667, 10.0667, 10.3667, 10.6333, 10.9667, 11.2333, 11.5667, 11.8667, 12.1667, 12.4333, 12.7667, 13.0333, 13.3667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1680, 1061), Vector2(1719, 1089), Vector2(1680, 1061), Vector2(1719, 1089), Vector2(1680, 1061), Vector2(1719, 1089), Vector2(1680, 1061), Vector2(1719, 1089), Vector2(1680, 1061), Vector2(1719, 1089), Vector2(1680, 1061), Vector2(1719, 1089), Vector2(1680, 1061), Vector2(1719, 1089), Vector2(1680, 1061)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Shot_03/TextRect_Personnage:texture")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(10.8333, 10.8667, 12.1333, 12.1667, 12.7333, 12.7667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_2t0sf"), ExtResource("2_2crek"), ExtResource("2_2crek"), ExtResource("1_2t0sf"), ExtResource("1_2t0sf"), ExtResource("3_grxx0")]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Fondu_Noir:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(4.03333, 4.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Fondu_Noir:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(4.06667, 4.2, 4.33333, 4.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_60r0o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1436, 833)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shot_01/TextRect_PirateBrasAVGauche:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-537, 1199)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shot_01/TextRect_PirateBrasAVDroit:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1849, 1001)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shot_01/TextRect_PirateBrasAVDroit:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Shot_01/TextRect_PirateBrasAVGauche:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Shot_01/TextRect_PirateAVGauche:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-246, -4)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Shot_01/TextRect_PirateAVDroit:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(528, 86)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Shot_01/TextRect_PirateMid:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(818, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Shot_01:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Shot_02:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Shot_02/TextRect_PremierPlan:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-9, -36)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Shot_02/TextRect_MidPlan:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Shot_03:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Shot_03/TextRect_MainGauche:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1680, 1061)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Shot_03/TextRect_Personnage:texture")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_2t0sf")]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Fondu_Noir:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Fondu_Noir:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8skuy"]
+_data = {
+"Introduction": SubResource("Animation_vnefm"),
+"RESET": SubResource("Animation_60r0o")
+}
+
+[node name="Introduction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Metteur_En_Scene" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8skuy")
+}
+autoplay = "Introduction"
+
+[node name="Shot_01" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextRect_Fond" type="TextureRect" parent="Shot_01"]
+layout_mode = 0
+offset_right = 2880.0
+offset_bottom = 1620.0
+texture = ExtResource("1_68act")
+
+[node name="TextRect_Barman" type="TextureRect" parent="Shot_01"]
+layout_mode = 0
+offset_left = 1641.0
+offset_top = -62.0
+offset_right = 2921.0
+offset_bottom = 1480.0
+texture = ExtResource("2_w2j8h")
+
+[node name="TextRect_PirateMid" type="TextureRect" parent="Shot_01"]
+layout_mode = 0
+offset_left = 818.0
+offset_right = 2939.0
+offset_bottom = 1741.0
+texture = ExtResource("3_etue2")
+
+[node name="TextRect_PirateAVDroit" type="TextureRect" parent="Shot_01"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 86.0
+offset_right = 1996.0
+offset_bottom = 1706.0
+texture = ExtResource("4_ymfbt")
+
+[node name="TextRect_PirateAVGauche" type="TextureRect" parent="Shot_01"]
+layout_mode = 0
+offset_left = -246.0
+offset_top = -4.0
+offset_right = 1023.0
+offset_bottom = 1788.0
+texture = ExtResource("5_a86h4")
+
+[node name="TextRect_PirateBrasAVDroit" type="TextureRect" parent="Shot_01"]
+layout_mode = 0
+offset_left = 1849.0
+offset_top = 1001.0
+offset_right = 4436.0
+offset_bottom = 1840.0
+texture = ExtResource("6_hb3b6")
+flip_h = true
+
+[node name="TextRect_PirateBrasAVGauche" type="TextureRect" parent="Shot_01"]
+layout_mode = 0
+offset_left = -537.0
+offset_top = 1199.0
+offset_right = 2050.0
+offset_bottom = 2038.0
+texture = ExtResource("6_hb3b6")
+
+[node name="Shot_02" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextRect_ArrPlan" type="TextureRect" parent="Shot_02"]
+layout_mode = 0
+offset_left = 1890.0
+offset_top = 400.0
+offset_right = 2621.0
+offset_bottom = 1106.0
+texture = ExtResource("7_wrgh0")
+
+[node name="TextRect_MidPlan" type="TextureRect" parent="Shot_02"]
+layout_mode = 0
+offset_right = 2880.0
+offset_bottom = 1620.0
+texture = ExtResource("8_eny4h")
+
+[node name="TextRect_PremierPlan" type="TextureRect" parent="Shot_02"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = -36.0
+offset_right = 3151.0
+offset_bottom = 1746.0
+texture = ExtResource("9_qveub")
+
+[node name="Shot_03" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextRect_FondMousse" type="TextureRect" parent="Shot_03"]
+layout_mode = 0
+offset_left = 1572.0
+offset_top = 229.0
+offset_right = 2783.0
+offset_bottom = 959.0
+texture = ExtResource("12_bx8xe")
+
+[node name="TextRect_MousseARR_Droite" type="TextureRect" parent="Shot_03"]
+layout_mode = 0
+offset_left = 1009.0
+offset_top = 149.0
+offset_right = 3121.0
+offset_bottom = 1337.0
+texture = ExtResource("13_yyvm1")
+
+[node name="TextRect_MousseARR_Gauche" type="TextureRect" parent="Shot_03"]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 145.0
+offset_right = 2964.0
+offset_bottom = 1333.0
+texture = ExtResource("14_nvg5s")
+
+[node name="TextRect_Personnage" type="TextureRect" parent="Shot_03"]
+layout_mode = 0
+offset_left = 1623.0
+offset_top = 426.0
+offset_right = 2477.0
+offset_bottom = 1353.0
+texture = ExtResource("1_2t0sf")
+
+[node name="TextRect_MainDroite" type="TextureRect" parent="Shot_03"]
+layout_mode = 0
+offset_left = 1907.0
+offset_top = 953.0
+offset_right = 2447.0
+offset_bottom = 1334.0
+rotation = -0.174533
+texture = ExtResource("15_upjbw")
+
+[node name="TextRect_MainGauche" type="TextureRect" parent="Shot_03"]
+layout_mode = 0
+offset_left = 1680.0
+offset_top = 1061.0
+offset_right = 2220.0
+offset_bottom = 1321.0
+rotation = -0.174533
+texture = ExtResource("16_im1c6")
+
+[node name="TextRect_MousseAVDroite" type="TextureRect" parent="Shot_03"]
+layout_mode = 0
+offset_left = 1972.0
+offset_top = 299.0
+offset_right = 3046.0
+offset_bottom = 1337.0
+texture = ExtResource("17_twm3w")
+
+[node name="TextRect_MousseAVGauche" type="TextureRect" parent="Shot_03"]
+layout_mode = 0
+offset_left = 1018.0
+offset_top = 156.0
+offset_right = 2233.0
+offset_bottom = 1344.0
+texture = ExtResource("18_40m0m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1436, 833)
+zoom = Vector2(0.7, 0.7)
+
+[node name="Fondu_Noir" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Fondu_Noir"]
+layout_mode = 0
+offset_left = -571.0
+offset_top = -495.0
+offset_right = 5171.0
+offset_bottom = 2753.0
+color = Color(0, 0, 0, 1)
