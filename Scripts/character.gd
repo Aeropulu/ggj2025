@@ -11,7 +11,7 @@ var bump_duration: float = 0.2
 @export var board: Board
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	move_to(Vector2i(4, 8))
+	move_to(Vector2i(board.width / 2, board.height - 1))
 	move_duration = animation_player.get_animation("move").length
 
 

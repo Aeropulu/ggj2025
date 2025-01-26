@@ -19,7 +19,7 @@ func switch_board(new_board_scene: PackedScene) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_board = %Board
-	switch_board(load("res://Scenes/Boards/Board_Aventure_02.tscn"))
+	switch_board(load("res://Scenes/Boards/Board_Tuto_01.tscn"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
