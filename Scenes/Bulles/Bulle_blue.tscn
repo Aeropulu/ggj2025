@@ -2,24 +2,29 @@
 
 [ext_resource type="Script" path="res://Scripts/bulle.gd" id="1_mcksu"]
 [ext_resource type="Texture2D" uid="uid://bnxhovycnkbnm" path="res://Assets/Sprites/Bulles/Bulle_Back_[Multiply].png" id="2_5r1cm"]
+[ext_resource type="FastNoiseLite" uid="uid://dittmx7rr588d" path="res://Assets/noise.tres" id="2_u33yo"]
 [ext_resource type="Texture2D" uid="uid://gwbcgvu2jv8h" path="res://Assets/Sprites/Bulles/Bulle_Greyscale.png" id="2_w65cp"]
 [ext_resource type="Texture2D" uid="uid://ekixcf3u0wm6" path="res://Assets/Sprites/Diamants/Gemme_Bleue.png" id="3_i8wtb"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8rrya"]
-blend_mode = 3
-
-[node name="Bulle" type="Node2D"]
+[node name="Bulle" type="Node2D" node_paths=PackedStringArray("diamant_sprite", "bulle_sprite")]
 script = ExtResource("1_mcksu")
 coussin_color = Color(0.8, 0.923333, 1, 1)
+diamant_sprite = NodePath("Sprite_Diamant")
+bulle_sprite = NodePath("bulle_sprites")
+noise = ExtResource("2_u33yo")
+has_noise_anim = true
 
-[node name="BulleBack[multiply]" type="Sprite2D" parent="."]
-self_modulate = Color(0.606667, 0.6, 1, 1)
-material = SubResource("CanvasItemMaterial_8rrya")
+[node name="bulle_sprites" type="Node2D" parent="."]
+
+[node name="BulleBack[multiply]" type="Sprite2D" parent="bulle_sprites"]
+self_modulate = Color(0.00733322, 0, 0.44, 0.196078)
 texture = ExtResource("2_5r1cm")
 
-[node name="Sprite_Bulle" type="Sprite2D" parent="."]
-z_index = 1
+[node name="Sprite_Bulle" type="Sprite2D" parent="bulle_sprites"]
+self_modulate = Color(0.642667, 0.64, 0.8, 1)
+z_index = 2
 texture = ExtResource("2_w65cp")
 
 [node name="Sprite_Diamant" type="Sprite2D" parent="."]
+z_index = 1
 texture = ExtResource("3_i8wtb")
