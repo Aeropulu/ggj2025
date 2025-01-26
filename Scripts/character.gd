@@ -5,7 +5,7 @@ class_name Character
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	move_to(Vector2i(4, 8))
+	move_to(Vector2i(0, 8))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,3 +25,6 @@ func get_tile_pos() -> Vector2i:
 
 func advance() -> void:
 	move_to(_tilemap.local_to_map(position) + Vector2i.UP)
+	
+func bump(direction: Vector2i) -> void:
+	pass

@@ -5,9 +5,13 @@ class_name ActionMove
 @export var preview_arrow_scene: PackedScene = preload("res://Scenes/ActionPreviews/PreviewMove.tscn")
 
 func do_action(char: Character)-> bool:
-	char.move_to(char.get_tile_pos() + relative_movement)
-	# TODO: check collisions
-	action_done.emit()
+	var board: Board = char.get_node("%Board")
+	var next_pos: Vector2i = char.get_tile_pos() + relative_movement
+	if next_pos.x < 0 or next_pos.y >= board.width:
+		char.bump(relative_movement)
+		return false
+	
+	char.move_to(next_pos)
 	return true
 
 func make_preview(_char: Character)-> Node2D:
