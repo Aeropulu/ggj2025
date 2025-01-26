@@ -9,7 +9,7 @@ func do_action(char: Character) -> float:
 	if not is_instance_valid(preview):
 		return 0.0
 	
-	var board: Board = char.get_node("%Board")
+	var board: Board = Game.current_board
 	
 	var last_timer: SceneTreeTimer = null
 	for dir in directions:
@@ -63,7 +63,7 @@ func do_action(char: Character) -> float:
 	return directions.size() * delay_between_shots
 
 func make_preview(char: Character)-> Node2D:
-	var board: Board = char.get_node("%Board")
+	var board: Board = Game.current_board
 	var preview_node := Node2D.new()
 	for dir in directions:
 		var curve := board.calculate_path(char.get_tile_pos(), dir)

@@ -6,7 +6,7 @@ class_name ActionMove
 
 
 func do_action(char: Character)-> float:
-	var board: Board = char.get_node("%Board")
+	var board: Board = Game.current_board
 	var next_pos: Vector2i = char.get_tile_pos() + relative_movement
 	if next_pos.x < 0 or next_pos.x >= board.width:
 		char.bump(relative_movement)
@@ -22,6 +22,6 @@ func make_preview(char: Character)-> Node2D:
 	if not is_instance_valid(preview_node):
 		return null
 	preview_node.rotation = angle
-	var board: Board = char.get_node("%Board")
+	var board: Board = Game.current_board
 	preview_node.position = board.map_to_local(char.get_tile_pos())
 	return preview_node
