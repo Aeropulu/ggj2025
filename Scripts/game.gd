@@ -43,14 +43,8 @@ static func next_level() -> void:
 	
 
 static func fail_level() -> void:
-	var should_be_tutorial = true
-	if not instance.current_board.is_tutorial:
-		should_be_tutorial = false
-		instance.current_level = 0
-	
 	instance.switch_board(instance.levels[instance.current_level])
-	while instance.current_board.is_tutorial != should_be_tutorial:
-		next_level()
+
 	
 static func win_game() -> void:
 	instance.add_child(instance.victory_screen.instantiate())
