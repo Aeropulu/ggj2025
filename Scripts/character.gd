@@ -4,9 +4,14 @@ class_name Character
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 signal on_die
+var is_dead: bool = false
 
 var move_duration: float
 var bump_duration: float = 0.2
+
+var is_high_emergency: bool = false
+var music_emergency_lvl1 = preload("res://Assets/Audio/GGJ SOGAMES - MDC - PireRates Emergency lvl1.mp3")
+var music_emergency_lvl2 = preload("res://Assets/Audio/GGJ SOGAMES - MDC - PireRates Emergency lvl2.mp3")
 
 @export var board: Board
 # Called when the node enters the scene tree for the first time.
@@ -18,16 +23,23 @@ func move_to_start() -> void:
 	if (not is_instance_valid(board)):
 		board = Game.current_board
 	move_to(Vector2i((board.width - 1)  / 2, board.height))
+	AudioManager.Stop(AudioManager.Bus.MUSIQUE)
+	AudioManager.Play(music_emergency_lvl1, AudioManager.Bus.MUSIQUE)
+	is_high_emergency = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func move_to(tile_coord: Vector2i) -> void:
-	
 	if (not is_instance_valid(board)):
 		board = Game.current_board
 	var pos = board.to_global(board.map_to_local(tile_coord))
+	if tile_coord.y < 6 and not is_high_emergency:
+		is_high_emergency = true
+		AudioManager.Stop(AudioManager.Bus.MUSIQUE)
+		AudioManager.Play(music_emergency_lvl2, AudioManager.Bus.MUSIQUE)
+	
 	var bubble = board.get_bubble(tile_coord)
 	if is_instance_valid(bubble):
 		bubble.queue_free()
@@ -41,12 +53,13 @@ func move_to(tile_coord: Vector2i) -> void:
 		finish_level(tile_coord.x)
 
 func get_tile_pos() -> Vector2i:
-	board = Game.current_board
 	if (not is_instance_valid(board)):
-		return Vector2i.ZERO
+		board = Game.current_board
 	return board.local_to_map(board.to_local(self.global_position))
 
 func advance() -> void:
+	if (is_dead):
+		return
 	move_to(get_tile_pos() + Vector2i.UP)
 	
 func bump(direction: Vector2i) -> void:
@@ -63,12 +76,14 @@ func shoot() -> void:
 	animation_player.animation_finished.connect(func(_name):animation_player.play("idle"))
 
 func die() -> void:
+	is_dead = true
 	var tween = get_tree().create_tween()
 	var transition_time = 0.1
 	for i in range(4):
 		tween.tween_property(self, "modulate", Color.RED, transition_time)
 		tween.tween_property(self, "modulate", Color.WHITE, transition_time)
 	await tween.finished
+	is_dead = false
 	Game.fail_level()
 	move_to_start()
 
