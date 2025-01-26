@@ -3,6 +3,7 @@ class_name Preview
 
 @export var bubbles: Array[PackedScene]
 @export var coussin: Sprite2D
+@export var character: Character
 var spawn_duration: float = 0.25
 var mouse_pos: Vector2
 
@@ -11,6 +12,7 @@ var current_bubble: Bulle = null:
 		if is_instance_valid(current_bubble):
 			current_bubble.queue_free()
 		current_bubble = value
+		character.preview_bubble(current_bubble.duplicate())
 		add_child(current_bubble)
 		coussin.self_modulate = current_bubble.coussin_color
 		current_bubble.scale = Vector2.ONE * 0.4

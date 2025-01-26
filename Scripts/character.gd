@@ -2,6 +2,7 @@ extends Node2D
 class_name Character
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var bubble_holder: Node2D = $BubbleHolder
 
 signal on_die
 var is_dead: bool = false
@@ -12,6 +13,8 @@ var bump_duration: float = 0.2
 var is_high_emergency: bool = false
 var music_emergency_lvl1 = preload("res://Assets/Audio/GGJ SOGAMES - MDC - PireRates Emergency lvl1.mp3")
 var music_emergency_lvl2 = preload("res://Assets/Audio/GGJ SOGAMES - MDC - PireRates Emergency lvl2.mp3")
+
+var held_bubble:Bulle
 
 @export var board: Board
 # Called when the node enters the scene tree for the first time.
@@ -97,3 +100,13 @@ func finish_level(column: int) -> void:
 	EventManager.Invoke_On_Add_Score(score)
 	Game.next_level()
 	move_to_start()
+
+func preview_bubble(bubble: Bulle) -> void:
+	if is_instance_valid(held_bubble):
+		held_bubble.queue_free()
+	bubble_holder.add_child(bubble)
+	bubble.position = Vector2.DOWN * 100
+	var tween = get_tree().create_tween()
+	tween.tween_property(bubble, "position", Vector2.ZERO, 0.15)
+	bubble.scale = Vector2.ONE
+	held_bubble = bubble
