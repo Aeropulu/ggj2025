@@ -1,7 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://cr5k4ucdx3yyy"]
+[gd_scene load_steps=33 format=3 uid="uid://cr5k4ucdx3yyy"]
 
 [ext_resource type="Texture2D" uid="uid://1pkvu1jydgg0" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Personnage_Concentre.png" id="1_2t0sf"]
 [ext_resource type="Texture2D" uid="uid://rsayj6h6bg8r" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_Fond.png" id="1_68act"]
+[ext_resource type="Script" path="res://Scripts/Introduction_Controler.gd" id="1_und5p"]
 [ext_resource type="Texture2D" uid="uid://h0cjo20w1w4v" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Personnage_Regard_Devant.png" id="2_2crek"]
 [ext_resource type="Texture2D" uid="uid://cpyerfhtpwl4w" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_Barman.png" id="2_w2j8h"]
 [ext_resource type="Texture2D" uid="uid://c7yf6870iq2pr" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_PirateMid.png" id="3_etue2"]
@@ -27,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://bcacx8swkuyiu" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Mousse_Droite.png" id="23_088cp"]
 [ext_resource type="Texture2D" uid="uid://bkfdsghgu5dxn" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Mousse_Avant.png" id="24_ym7m8"]
 [ext_resource type="Texture2D" uid="uid://ccx1uvj7e6ue4" path="res://Assets/Sprites/Introduction/Shot_05/Shot_05_Main.png" id="27_a4if7"]
+[ext_resource type="Theme" uid="uid://difqp5uc8by72" path="res://Assets/Themes/Global_Theme.tres" id="29_yicyj"]
 
 [sub_resource type="Animation" id="Animation_vnefm"]
 resource_name = "Introduction"
@@ -254,10 +256,10 @@ tracks/18/path = NodePath("Shot_04:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(13.9, 13.9333, 14.9, 14.9333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 13.9, 13.9333, 14.9, 14.9333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, true, false]
+"values": [false, false, true, true, false]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -338,10 +340,10 @@ tracks/25/path = NodePath("Shot_05:visible")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
-"times": PackedFloat32Array(14.9, 14.9333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 14.9, 14.9333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false, true]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
@@ -354,6 +356,44 @@ tracks/26/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1907, 953), Vector2(1890, 1034)]
+}
+tracks/27/type = "method"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath(".")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(17.9333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_Go_To_Game_Scene"
+}]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Titre:modulate")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Play:visible")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_60r0o"]
@@ -404,7 +444,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1849, 1001)]
+"values": [Vector2(2302, 1238)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -464,7 +504,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(818, 0)]
+"values": [Vector2(1170, 86)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -488,7 +528,7 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -524,7 +564,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -682,6 +722,30 @@ tracks/26/keys = {
 "update": 0,
 "values": [Vector2(1907, 953)]
 }
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Titre:modulate")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Play:visible")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8skuy"]
 _data = {
@@ -689,19 +753,21 @@ _data = {
 "RESET": SubResource("Animation_60r0o")
 }
 
-[node name="Introduction" type="Control"]
+[node name="Introduction" type="Control" node_paths=PackedStringArray("_bouton_play", "_animation_player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_und5p")
+_bouton_play = NodePath("Play")
+_animation_player = NodePath("Metteur_En_Scene")
 
 [node name="Metteur_En_Scene" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_8skuy")
 }
-autoplay = "Introduction"
 
 [node name="Shot_01" type="Control" parent="."]
 anchors_preset = 0
@@ -724,9 +790,10 @@ texture = ExtResource("2_w2j8h")
 
 [node name="TextRect_PirateMid" type="TextureRect" parent="Shot_01"]
 layout_mode = 0
-offset_left = 818.0
-offset_right = 2939.0
-offset_bottom = 1741.0
+offset_left = 1170.0
+offset_top = 86.0
+offset_right = 3291.0
+offset_bottom = 1827.0
 texture = ExtResource("3_etue2")
 
 [node name="TextRect_PirateAVDroit" type="TextureRect" parent="Shot_01"]
@@ -747,10 +814,10 @@ texture = ExtResource("5_a86h4")
 
 [node name="TextRect_PirateBrasAVDroit" type="TextureRect" parent="Shot_01"]
 layout_mode = 0
-offset_left = 1849.0
-offset_top = 1001.0
-offset_right = 4436.0
-offset_bottom = 1840.0
+offset_left = 2302.0
+offset_top = 1238.0
+offset_right = 4889.0
+offset_bottom = 2077.0
 texture = ExtResource("6_hb3b6")
 flip_h = true
 
@@ -763,6 +830,7 @@ offset_bottom = 2038.0
 texture = ExtResource("6_hb3b6")
 
 [node name="Shot_02" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -792,6 +860,7 @@ offset_bottom = 1746.0
 texture = ExtResource("9_qveub")
 
 [node name="Shot_03" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -957,3 +1026,23 @@ offset_top = -495.0
 offset_right = 5171.0
 offset_bottom = 2753.0
 color = Color(0, 0, 0, 1)
+
+[node name="Titre" type="Label" parent="."]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 1163.0
+offset_right = 969.0
+offset_bottom = 1555.0
+theme = ExtResource("29_yicyj")
+text = "Pirate Bubble
+Tactics"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2053.0
+offset_top = 1310.0
+offset_right = 2305.0
+offset_bottom = 1510.0
+theme = ExtResource("29_yicyj")
+text = "Play"

@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://difqp5uc8by72"]
+
+[ext_resource type="FontFile" uid="uid://brjyklhfs8gan" path="res://Assets/Fonts/CuteFont-Regular.otf" id="1_vvj00"]
+
+[resource]
+Button/font_sizes/font_size = 200
+Button/fonts/font = ExtResource("1_vvj00")
+Label/font_sizes/font_size = 170
+Label/fonts/font = ExtResource("1_vvj00")
