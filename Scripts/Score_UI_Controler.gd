@@ -4,7 +4,7 @@ var score : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Label.text = 0
+	$Label.text = "0"
 	Connect_Signaux()
 
 func Connect_Signaux():

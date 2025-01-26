@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://2hbqbvrxxpyu"]
+[gd_scene load_steps=47 format=4 uid="uid://2hbqbvrxxpyu"]
 
 [ext_resource type="Texture2D" uid="uid://da8t8ru1b4dyb" path="res://Assets/Sprites/Plateau/Plateau.png" id="1_6okof"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_htdqj"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://c4fgjsqa1b1y2" path="res://Assets/Sprites/Personnage/Mouvement/Personnage_Mouvement_F06.png" id="10_2vyv3"]
 [ext_resource type="Script" path="res://Scripts/preview.gd" id="10_7mp3v"]
 [ext_resource type="PackedScene" uid="uid://cb33wi5j8ucka" path="res://Scenes/Bulles/Bulle_blue.tscn" id="11_cxpcf"]
+[ext_resource type="Texture2D" uid="uid://wruo2w6fo1jc" path="res://Assets/Sprites/Personnage/Idle/OmbrePorteePersonnage_[Multiply].png" id="11_dec64"]
 [ext_resource type="Resource" path="res://Assets/Actions/shoot_bubble_front_left.tres" id="11_pms88"]
 [ext_resource type="PackedScene" uid="uid://wjrrnqek0pca" path="res://Scenes/Bulles/Bulle_green.tscn" id="12_lg3k2"]
 [ext_resource type="Resource" path="res://Assets/Actions/shoot_bubble_front_right.tres" id="12_p2ye5"]
@@ -123,8 +124,16 @@ z_index = 3
 script = ExtResource("2_h5epx")
 board = NodePath("../Board")
 
+[node name="Ombre Portée" type="Sprite2D" parent="Character"]
+modulate = Color(0.19, 0.19, 0.19, 0.341176)
+position = Vector2(2, 75)
+texture = ExtResource("11_dec64")
+offset = Vector2(-19, -40)
+
 [node name="Sprite2D" type="Sprite2D" parent="Character"]
+position = Vector2(5, 22)
 texture = ExtResource("2_ldyfx")
+offset = Vector2(-19, -40)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Character"]
 libraries = {
