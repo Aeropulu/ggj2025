@@ -19,6 +19,7 @@ func switch_board(new_board_scene: PackedScene) -> void:
 	current_board.name = "Board"
 	current_board.unique_name_in_owner = true
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	instance = self
@@ -37,6 +38,7 @@ static func next_level() -> void:
 		return
 	var level_scene = instance.levels[instance.current_level]
 	instance.switch_board(level_scene)
+	EventManager.Invoke_On_New_Board()
 	
 
 static func fail_level() -> void:
