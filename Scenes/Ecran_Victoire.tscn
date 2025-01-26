@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw7bfiavslms8"]
+[gd_scene load_steps=4 format=3 uid="uid://c5xjdujtdxgw5"]
 
 [ext_resource type="Script" path="res://Scripts/Ecran_Victoire_Controler.gd" id="1_pqpsg"]
 [ext_resource type="Texture2D" uid="uid://dmin3b25yx4jt" path="res://Assets/Sprites/UI/Win.png" id="1_wcskf"]
 [ext_resource type="Theme" uid="uid://difqp5uc8by72" path="res://Assets/Themes/Global_Theme.tres" id="2_pddnw"]
 
 [node name="Ecran victoire" type="Control"]
+z_index = 8
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

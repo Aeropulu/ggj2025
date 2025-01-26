@@ -6,6 +6,7 @@ static var instance: Game
 
 @export var levels: Array[PackedScene]
 var current_level = 0
+@onready var victory_screen = preload("res://Scenes/Ecran_Victoire.tscn")
 
 func switch_board(new_board_scene: PackedScene) -> void:
 	var new_board: Board = new_board_scene.instantiate()
@@ -52,4 +53,4 @@ static func fail_level() -> void:
 		next_level()
 	
 static func win_game() -> void:
-	pass
+	instance.add_child(instance.victory_screen.instantiate())
