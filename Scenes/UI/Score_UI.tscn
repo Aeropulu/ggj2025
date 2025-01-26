@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Score_UI_Controler.gd" id="1_d6efy"]
 [ext_resource type="Texture2D" uid="uid://byiplfjv4uom6" path="res://Assets/Sprites/UI/Score_Bottom.png" id="1_eu3hd"]
-[ext_resource type="Theme" uid="uid://difqp5uc8by72" path="res://Assets/Themes/Global_Theme.tres" id="2_qscy2"]
 [ext_resource type="Texture2D" uid="uid://colxhorhmysdp" path="res://Assets/Sprites/UI/Score_Top.png" id="3_8jxwc"]
+[ext_resource type="FontFile" uid="uid://cxjfp0fihnllm" path="res://Assets/Fonts/Pirates.otf" id="3_bfv17"]
 
 [node name="Score" type="Control"]
 layout_mode = 3
@@ -19,14 +19,13 @@ offset_bottom = 170.0
 texture = ExtResource("1_eu3hd")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
 offset_left = 103.0
-offset_top = -2.0
+offset_top = 16.0
 offset_right = 265.0
 offset_bottom = 132.0
-theme = ExtResource("2_qscy2")
+theme_override_fonts/font = ExtResource("3_bfv17")
 theme_override_font_sizes/font_size = 80
-text = "999"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
