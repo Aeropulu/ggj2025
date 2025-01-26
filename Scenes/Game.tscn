@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://2hbqbvrxxpyu"]
+[gd_scene load_steps=36 format=4 uid="uid://2hbqbvrxxpyu"]
 
 [ext_resource type="Texture2D" uid="uid://da8t8ru1b4dyb" path="res://Assets/Sprites/Plateau/Plateau.png" id="1_6okof"]
 [ext_resource type="Script" path="res://Scripts/character.gd" id="2_h5epx"]
@@ -9,41 +9,27 @@
 [ext_resource type="Texture2D" uid="uid://dm8anck4mtcme" path="res://Assets/Sprites/Personnage/Envoi/Personnage_Envoi.png" id="4_qf3tu"]
 [ext_resource type="Texture2D" uid="uid://dwh1bhywrrfeb" path="res://Assets/Sprites/Personnage/Mouvement/Personnage_Mouvement_F01.png" id="5_2bu00"]
 [ext_resource type="Resource" uid="uid://5gwqrax77h57" path="res://Assets/Actions/move_left.tres" id="6_iuqrl"]
-[ext_resource type="Resource" uid="uid://dvbm7771ngc77" path="res://Assets/Actions/move_down.tres" id="6_sooy2"]
+[ext_resource type="Resource" path="res://Assets/Actions/move_down.tres" id="6_sooy2"]
 [ext_resource type="Texture2D" uid="uid://bqt16qfxp2mvc" path="res://Assets/Sprites/Personnage/Mouvement/Personnage_Mouvement_F02.png" id="6_yhr3j"]
-[ext_resource type="Resource" uid="uid://bofse52x8ehac" path="res://Assets/Actions/shoot_bubble_front.tres" id="7_k40js"]
+[ext_resource type="Resource" path="res://Assets/Actions/shoot_bubble_front.tres" id="7_k40js"]
 [ext_resource type="Texture2D" uid="uid://cge04go6xvh1t" path="res://Assets/Sprites/Personnage/Mouvement/Personnage_Mouvement_F03.png" id="7_peksi"]
+[ext_resource type="TileSet" uid="uid://bn2xfq8hpbt7c" path="res://Assets/Tileset/Tileset_Bubbles.tres" id="7_uet36"]
 [ext_resource type="Resource" uid="uid://dyrpaf762uyxu" path="res://Assets/Actions/move_right.tres" id="7_wlm4u"]
 [ext_resource type="Texture2D" uid="uid://cpj0f8v14vw45" path="res://Assets/Sprites/Personnage/Mouvement/Personnage_Mouvement_F04.png" id="8_nrwfo"]
 [ext_resource type="Texture2D" uid="uid://bsvlki5sp2h05" path="res://Assets/Sprites/Personnage/Mouvement/Personnage_Mouvement_F05.png" id="9_2vmgt"]
-[ext_resource type="Resource" uid="uid://cpu4hwv55iyp2" path="res://Assets/Actions/move_up.tres" id="9_vcora"]
+[ext_resource type="Script" path="res://Scripts/board.gd" id="9_i64tl"]
+[ext_resource type="Resource" path="res://Assets/Actions/move_up.tres" id="9_vcora"]
 [ext_resource type="Texture2D" uid="uid://c4fgjsqa1b1y2" path="res://Assets/Sprites/Personnage/Mouvement/Personnage_Mouvement_F06.png" id="10_2vyv3"]
 [ext_resource type="Script" path="res://Scripts/preview.gd" id="10_7mp3v"]
-[ext_resource type="PackedScene" uid="uid://c7b8lams2ybn5" path="res://Scenes/Bulles/Bulle_blue.tscn" id="11_cxpcf"]
-[ext_resource type="Resource" uid="uid://dj5o6e3utx014" path="res://Assets/Actions/shoot_bubble_front_left.tres" id="11_pms88"]
+[ext_resource type="PackedScene" uid="uid://cb33wi5j8ucka" path="res://Scenes/Bulles/Bulle_blue.tscn" id="11_cxpcf"]
+[ext_resource type="Resource" path="res://Assets/Actions/shoot_bubble_front_left.tres" id="11_pms88"]
 [ext_resource type="PackedScene" uid="uid://wjrrnqek0pca" path="res://Scenes/Bulles/Bulle_green.tscn" id="12_lg3k2"]
-[ext_resource type="Resource" uid="uid://blelf4pnx0gli" path="res://Assets/Actions/shoot_bubble_front_right.tres" id="12_p2ye5"]
+[ext_resource type="Resource" path="res://Assets/Actions/shoot_bubble_front_right.tres" id="12_p2ye5"]
 [ext_resource type="PackedScene" uid="uid://0pykulbydmav" path="res://Scenes/Bulles/Bulle_purple.tscn" id="13_1xyp3"]
-[ext_resource type="Resource" uid="uid://cl7lqnb4ry7xu" path="res://Assets/Actions/shoot_bubble_left_right.tres" id="13_pbo37"]
+[ext_resource type="Resource" path="res://Assets/Actions/shoot_bubble_left_right.tres" id="13_pbo37"]
 [ext_resource type="PackedScene" uid="uid://bu82ai0esndtw" path="res://Scenes/Bulles/Bulle_red.tscn" id="14_qsq2o"]
 [ext_resource type="Texture2D" uid="uid://dsrxftxdx727h" path="res://Assets/Sprites/Plateau/Coussin.png" id="17_anqpt"]
 [ext_resource type="Texture2D" uid="uid://dmdtjnehrpqpx" path="res://Assets/Sprites/Plateau/NextColor.png" id="20_juev3"]
-[ext_resource type="PackedScene" uid="uid://bkcj3kwgrjuut" path="res://Scenes/board.tscn" id="25_kb0o8"]
-
-[sub_resource type="Animation" id="Animation_7ni14"]
-resource_name = "idle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_ldyfx")]
-}
 
 [sub_resource type="Animation" id="Animation_uvjil"]
 length = 0.001
@@ -60,8 +46,8 @@ tracks/0/keys = {
 "values": [ExtResource("2_ldyfx")]
 }
 
-[sub_resource type="Animation" id="Animation_ch7oi"]
-resource_name = "shoot"
+[sub_resource type="Animation" id="Animation_7ni14"]
+resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -72,7 +58,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_qf3tu")]
+"values": [ExtResource("2_ldyfx")]
 }
 
 [sub_resource type="Animation" id="Animation_5frn3"]
@@ -91,6 +77,21 @@ tracks/0/keys = {
 "values": [ExtResource("5_2bu00"), ExtResource("6_yhr3j"), ExtResource("7_peksi"), ExtResource("8_nrwfo"), ExtResource("9_2vmgt"), ExtResource("10_2vyv3")]
 }
 
+[sub_resource type="Animation" id="Animation_ch7oi"]
+resource_name = "shoot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_qf3tu")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2fwf1"]
 _data = {
 "RESET": SubResource("Animation_uvjil"),
@@ -106,6 +107,7 @@ position = Vector2(960, 540)
 texture = ExtResource("1_6okof")
 
 [node name="Character" type="Node2D" parent="." node_paths=PackedStringArray("_tilemap")]
+z_index = 3
 script = ExtResource("2_h5epx")
 _tilemap = NodePath("../Board")
 
@@ -172,8 +174,13 @@ character = NodePath("../../Character")
 preview = NodePath("../../Coussin/Preview")
 deck = NodePath("..")
 
-[node name="Board" parent="." instance=ExtResource("25_kb0o8")]
+[node name="Board" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
+position = Vector2(362, 107)
+rotation = 0.00698132
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAgABAAAAAAAAAAAAAgACAAAAAAAAAAAAAgADAAAAAAAAAAAAAgAEAAAAAAAAAAAAAgAFAAAAAAAAAAAAAgAGAAAAAAAAAAAAAgAHAAAAAAAAAAAAAgAAAAEAAAAAAAAAAwAHAAEAAAAAAAAAAwA=")
+tile_set = ExtResource("7_uet36")
+script = ExtResource("9_i64tl")
 
 [node name="Coussin" type="Sprite2D" parent="."]
 position = Vector2(1119, 450)
