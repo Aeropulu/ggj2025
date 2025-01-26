@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cr5k4ucdx3yyy"]
+[gd_scene load_steps=38 format=3 uid="uid://cr5k4ucdx3yyy"]
 
 [ext_resource type="Texture2D" uid="uid://1pkvu1jydgg0" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Personnage_Concentre.png" id="1_2t0sf"]
 [ext_resource type="Texture2D" uid="uid://rsayj6h6bg8r" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_Fond.png" id="1_68act"]
@@ -31,6 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://dejux55f6ifp5" path="res://Assets/Sprites/Introduction/Shot_05/Shot_05_PersoCouleur.png" id="29_rbklw"]
 [ext_resource type="Theme" uid="uid://difqp5uc8by72" path="res://Assets/Themes/Global_Theme.tres" id="29_yicyj"]
 [ext_resource type="Texture2D" uid="uid://c11mf0rpvc6cu" path="res://Assets/Sprites/Introduction/Shot_05/Shot_05_EtoilesYeux.png" id="30_vdmoy"]
+[ext_resource type="Texture2D" uid="uid://d3x16xcdo04p2" path="res://Assets/Sprites/UI/Skip_Idle.png" id="32_gyvjj"]
+[ext_resource type="Texture2D" uid="uid://c84llb3e3uvga" path="res://Assets/Sprites/UI/Skip_Pressed.png" id="33_erhv3"]
+[ext_resource type="Texture2D" uid="uid://1562xp25xgvg" path="res://Assets/Sprites/UI/Skip_Hover.png" id="34_orstg"]
 
 [sub_resource type="Animation" id="Animation_vnefm"]
 resource_name = "Introduction"
@@ -899,7 +902,7 @@ _data = {
 "RESET": SubResource("Animation_60r0o")
 }
 
-[node name="Introduction" type="Control" node_paths=PackedStringArray("_bouton_play", "_animation_player")]
+[node name="Introduction" type="Control" node_paths=PackedStringArray("_bouton_play", "_skip_button", "_animation_player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -908,6 +911,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_und5p")
 _bouton_play = NodePath("Play")
+_skip_button = NodePath("CanvasLayer/Skip/Button")
 _animation_player = NodePath("Metteur_En_Scene")
 
 [node name="Metteur_En_Scene" type="AnimationPlayer" parent="."]
@@ -1221,3 +1225,22 @@ offset_right = 2305.0
 offset_bottom = 1510.0
 theme = ExtResource("29_yicyj")
 text = "Play"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Skip" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1824.0
+offset_top = -6.0
+offset_right = 1864.0
+offset_bottom = 34.0
+scale = Vector2(1.5, 1.5)
+
+[node name="Button" type="TextureButton" parent="CanvasLayer/Skip"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+texture_normal = ExtResource("32_gyvjj")
+texture_pressed = ExtResource("33_erhv3")
+texture_hover = ExtResource("34_orstg")
