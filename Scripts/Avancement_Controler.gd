@@ -13,4 +13,6 @@ func On_New_Board():
 	Match_Graphisme_Avec_Avancement()
 
 func Match_Graphisme_Avec_Avancement():
+	if avancement >= images_avancement.size()-1 :
+		return
 	sprite2D.texture = images_avancement[avancement]
