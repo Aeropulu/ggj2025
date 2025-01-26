@@ -8,5 +8,4 @@ script = ExtResource("1_lkkpe")
 score = 100
 
 [node name="Trésor" type="Sprite2D" parent="."]
-top_level = true
 texture = ExtResource("2_1rm1o")
