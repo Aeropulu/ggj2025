@@ -40,3 +40,7 @@ func bump(direction: Vector2i) -> void:
 	var bump_tween := get_tree().create_tween()
 	bump_tween.tween_property(self, "global_position", bump_pos, bump_duration * 0.5)
 	bump_tween.tween_property(self, "global_position", start_pos, bump_duration * 0.5)
+
+func shoot() -> void:
+	animation_player.play("shoot")
+	animation_player.animation_finished.connect(func(_name):animation_player.play("idle"))
