@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw7bfiavslms8"]
+
+[ext_resource type="Script" path="res://Scripts/Ecran_Victoire_Controler.gd" id="1_pqpsg"]
+[ext_resource type="Texture2D" uid="uid://dmin3b25yx4jt" path="res://Assets/Sprites/UI/Win.png" id="1_wcskf"]
+[ext_resource type="Theme" uid="uid://difqp5uc8by72" path="res://Assets/Themes/Global_Theme.tres" id="2_pddnw"]
+
+[node name="Ecran victoire" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pqpsg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_wcskf")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 571.0
+offset_right = 1255.0
+offset_bottom = 798.0
+theme = ExtResource("2_pddnw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 794.0
+offset_right = 1557.0
+offset_bottom = 994.0
+scale = Vector2(0.3, 0.3)
+theme = ExtResource("2_pddnw")
+text = "Quit Game"

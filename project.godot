@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 EventManager="*res://Scripts/Autoload/Event_Manager.gd"
 AudioManager="*res://Scenes/Audio_Manager.tscn"
+RuntimeData="*res://Scripts/Autoload/Runtime_Data.gd"
 
 [display]
 

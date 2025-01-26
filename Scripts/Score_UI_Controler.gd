@@ -12,4 +12,5 @@ func Connect_Signaux():
 
 func _On_Score_Addition(addition : int):
 	score += addition
+	RuntimeData.current_score = score
 	$Label.text = str(score)
