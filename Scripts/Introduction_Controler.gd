@@ -4,6 +4,8 @@ extends Control
 @export var _skip_button : TextureButton
 @export var _animation_player : AnimationPlayer
 
+var game_scene = preload("res://Scenes/Game.tscn")
+
 func _ready() -> void:
 	Connect_Signaux()
 
@@ -23,7 +25,5 @@ func Play_Music():
 	AudioManager.Play(load("res://Assets/Audio/SFX/SoundBybrunoboselli__pirate-tavern.wav"), AudioManager.Bus.BRUITAGE, 2.0)
 
 func _Go_To_Game_Scene():
-	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and
+	get_tree().change_scene_to_packed(game_scene)
+	#get_tree().change_scene_to_file("res://Scenes/Game.tscn")
