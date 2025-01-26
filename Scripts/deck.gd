@@ -2,6 +2,8 @@ extends HBoxContainer
 class_name Deck
 @export var cards: Array[ActionBase]
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	cards = cards.filter(func(card): return is_instance_valid(card))
@@ -20,3 +22,8 @@ func draw_card(return_card: ActionBase = null) -> ActionBase:
 	if is_instance_valid(return_card):
 		cards.push_back(return_card)
 	return card
+
+func set_buttons_enable(is_enabled: bool) -> void:
+	for child in get_children():
+		if child is Button:
+			child.disabled = not is_enabled

@@ -3,17 +3,27 @@ class_name Preview
 
 @export var bubbles: Array[PackedScene]
 @export var coussin: Sprite2D
+var spawn_duration: float = 0.25
+var mouse_pos: Vector2
+
 var current_bubble: Bulle = null:
 	set(value):
 		if is_instance_valid(current_bubble):
 			current_bubble.queue_free()
 		current_bubble = value
-		coussin.self_modulate = current_bubble.coussin_color
 		add_child(current_bubble)
+		coussin.self_modulate = current_bubble.coussin_color
+		current_bubble.scale = Vector2.ONE * 0.4
+		current_bubble.global_position = mouse_pos
+		var tween = get_tree().create_tween()
+		tween.tween_property(current_bubble, "global_position", global_position, spawn_duration)
+		tween.parallel().tween_property(current_bubble, "scale", Vector2.ONE, spawn_duration)
+		
 var current_id: int = bubbles.size() + 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	mouse_pos = get_viewport_rect().end
 	random_bubble()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

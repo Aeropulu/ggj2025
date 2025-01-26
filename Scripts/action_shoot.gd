@@ -4,10 +4,10 @@ class_name action_shoot
 @export var directions: Array[Vector2i]
 @export var delay_between_shots: float = 0.1
 
-func do_action(char: Character) -> bool:
+func do_action(char: Character) -> float:
 	var preview: Preview = char.get_node("%Preview")
 	if not is_instance_valid(preview):
-		return false
+		return 0.0
 	
 	var board: Board = char.get_node("%Board")
 	
@@ -59,7 +59,7 @@ func do_action(char: Character) -> bool:
 		else:
 			last_timer.timeout.connect(func(): carrier.following_path = true)
 		last_timer = board.get_tree().create_timer(delay_between_shots)
-	return true
+	return directions.size() * delay_between_shots
 
 func make_preview(char: Character)-> Node2D:
 	var board: Board = char.get_node("%Board")
