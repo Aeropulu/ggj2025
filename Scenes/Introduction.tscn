@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cr5k4ucdx3yyy"]
+[gd_scene load_steps=35 format=3 uid="uid://cr5k4ucdx3yyy"]
 
 [ext_resource type="Texture2D" uid="uid://1pkvu1jydgg0" path="res://Assets/Sprites/Introduction/Shot_03/Shot_03_Personnage_Concentre.png" id="1_2t0sf"]
 [ext_resource type="Texture2D" uid="uid://rsayj6h6bg8r" path="res://Assets/Sprites/Introduction/Shot_01/Shot_01_Fond.png" id="1_68act"]
@@ -28,11 +28,13 @@
 [ext_resource type="Texture2D" uid="uid://bcacx8swkuyiu" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Mousse_Droite.png" id="23_088cp"]
 [ext_resource type="Texture2D" uid="uid://bkfdsghgu5dxn" path="res://Assets/Sprites/Introduction/Shot_04/Shot_04_Mousse_Avant.png" id="24_ym7m8"]
 [ext_resource type="Texture2D" uid="uid://ccx1uvj7e6ue4" path="res://Assets/Sprites/Introduction/Shot_05/Shot_05_Main.png" id="27_a4if7"]
+[ext_resource type="Texture2D" uid="uid://dejux55f6ifp5" path="res://Assets/Sprites/Introduction/Shot_05/Shot_05_PersoCouleur.png" id="29_rbklw"]
 [ext_resource type="Theme" uid="uid://difqp5uc8by72" path="res://Assets/Themes/Global_Theme.tres" id="29_yicyj"]
+[ext_resource type="Texture2D" uid="uid://c11mf0rpvc6cu" path="res://Assets/Sprites/Introduction/Shot_05/Shot_05_EtoilesYeux.png" id="30_vdmoy"]
 
 [sub_resource type="Animation" id="Animation_vnefm"]
 resource_name = "Introduction"
-length = 18.0
+length = 17.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -395,6 +397,78 @@ tracks/29/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Shot_05/TextRect_EtoileGauche:visible")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(16.2667, 16.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Shot_05/TextRect_EtoileDroite:visible")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(16.2667, 16.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Shot_05/TextRect_EtoileGauche:rotation")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(16.3, 16.5, 16.7, 16.9, 17.1, 17.3, 17.5, 17.7, 17.9, 18.1, 18.3, 18.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.349066, 0.0, -0.349066, 0.0, -0.349066, 0.0, -0.349066, 0.0, -0.349066, 0.0, -0.349066]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Shot_05/TextRect_EtoileDroite:rotation")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(16.3, 16.5, 16.7, 16.9, 17.1, 17.3, 17.5, 17.7, 17.9, 18.1, 18.3, 18.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.349066, 0.0, 0.349066, 0.0, 0.349066, 0.0, 0.349066, 0.0, 0.349066, 0.0, 0.349066]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Shot_05/TextRect_Couleur:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(16.2667, 16.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Shot_05/TextRect_Couleur:modulate")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(16.3, 17.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_60r0o"]
 length = 0.001
@@ -746,6 +820,78 @@ tracks/28/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Shot_05/TextRect_EtoileGauche:visible")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Shot_05/TextRect_EtoileDroite:visible")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Shot_05/TextRect_EtoileGauche:rotation")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Shot_05/TextRect_EtoileDroite:rotation")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Shot_05/TextRect_Couleur:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Shot_05/TextRect_Couleur:modulate")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8skuy"]
 _data = {
@@ -1008,6 +1154,35 @@ offset_top = 776.0
 offset_right = 2853.0
 offset_bottom = 1440.0
 texture = ExtResource("27_a4if7")
+
+[node name="TextRect_Couleur" type="TextureRect" parent="Shot_05"]
+visible = false
+layout_mode = 0
+offset_left = 747.0
+offset_top = -25.0
+offset_right = 3051.0
+offset_bottom = 1379.0
+texture = ExtResource("29_rbklw")
+
+[node name="TextRect_EtoileGauche" type="TextureRect" parent="Shot_05"]
+visible = false
+layout_mode = 0
+offset_left = 1544.0
+offset_top = 644.0
+offset_right = 1698.0
+offset_bottom = 804.0
+pivot_offset = Vector2(77, 80)
+texture = ExtResource("30_vdmoy")
+
+[node name="TextRect_EtoileDroite" type="TextureRect" parent="Shot_05"]
+visible = false
+layout_mode = 0
+offset_left = 1832.0
+offset_top = 647.0
+offset_right = 1986.0
+offset_bottom = 807.0
+pivot_offset = Vector2(77, 80)
+texture = ExtResource("30_vdmoy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1436, 833)
