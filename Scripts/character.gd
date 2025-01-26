@@ -1,7 +1,7 @@
 extends Node2D
 class_name Character
 
-@export var _tilemap: TileMapLayer
+@export var _tilemap: Board
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var move_duration: float
@@ -20,6 +20,10 @@ func move_to(tile_coord: Vector2i) -> void:
 	if (not is_instance_valid(_tilemap)):
 		return
 	var pos = _tilemap.to_global(_tilemap.map_to_local(tile_coord))
+	var bubble = _tilemap.get_bubble(tile_coord)
+	if is_instance_valid(bubble):
+		die()
+	
 	animation_player.play("move")
 	animation_player.animation_finished.connect(func(_name):animation_player.play("idle"))
 	var move_tween := get_tree().create_tween()
@@ -44,3 +48,10 @@ func bump(direction: Vector2i) -> void:
 func shoot() -> void:
 	animation_player.play("shoot")
 	animation_player.animation_finished.connect(func(_name):animation_player.play("idle"))
+
+func die() -> void:
+	var tween = get_tree().create_tween()
+	var transition_time = 0.1
+	for i in range(4):
+		tween.tween_property(self, "modulate", Color.RED, transition_time)
+		tween.tween_property(self, "modulate", Color.WHITE, transition_time)
