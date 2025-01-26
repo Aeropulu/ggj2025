@@ -15,16 +15,16 @@ func _process(delta: float) -> void:
 func move_to(tile_coord: Vector2i) -> void:
 	if (not is_instance_valid(_tilemap)):
 		return
-	var pos = _tilemap.map_to_local(tile_coord)
-	self.position = pos
+	var pos = _tilemap.to_global(_tilemap.map_to_local(tile_coord))
+	self.global_position = pos
 
 func get_tile_pos() -> Vector2i:
 	if (not is_instance_valid(_tilemap)):
 		return Vector2i.ZERO
-	return _tilemap.local_to_map(self.position)
+	return _tilemap.local_to_map(_tilemap.to_local(self.global_position))
 
 func advance() -> void:
-	move_to(_tilemap.local_to_map(position) + Vector2i.UP)
+	move_to(get_tile_pos() + Vector2i.UP)
 	
 func bump(direction: Vector2i) -> void:
 	pass

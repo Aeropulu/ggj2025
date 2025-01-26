@@ -12,11 +12,13 @@ class_name ActionButton
 @export var action_icon:TextureRect
 @export var deck:Deck
 
+var board: Board
 var action_preview:Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if is_instance_valid(deck):
 		action = deck.draw_card()
+		board = deck.get_node("%Board")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -32,13 +34,14 @@ func _on_pressed() -> void:
 	if is_instance_valid(deck):
 		action = deck.draw_card(action)
 	_on_mouse_exited()
-	_on_mouse_entered()
 	character.advance()
+	_on_mouse_entered()
+	
 
 func _on_mouse_entered() -> void:
 	action_preview = action.make_preview(character)
 	if is_instance_valid(action_preview):
-		character.add_child(action_preview)
+		board.add_child(action_preview)
 
 
 func _on_mouse_exited() -> void:

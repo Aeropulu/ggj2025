@@ -2,18 +2,19 @@ extends Node2D
 class_name Preview
 
 @export var bubbles: Array[PackedScene]
+@export var coussin: Sprite2D
 var current_bubble: Bulle = null:
 	set(value):
 		if is_instance_valid(current_bubble):
 			current_bubble.queue_free()
 		current_bubble = value
+		coussin.self_modulate = current_bubble.coussin_color
 		add_child(current_bubble)
 var current_id: int = bubbles.size() + 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	random_bubble()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

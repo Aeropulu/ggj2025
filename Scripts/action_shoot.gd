@@ -69,6 +69,6 @@ func make_preview(char: Character)-> Node2D:
 		var line := Line2D.new()
 		line.width = 4
 		for i in range(0, curve.point_count):
-			line.add_point(curve.get_point_position(i) - char.position)
+			line.add_point(curve.get_point_position(i))
 		preview_node.add_child(line)
 	return preview_node

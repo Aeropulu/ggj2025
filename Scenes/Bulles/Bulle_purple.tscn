@@ -6,6 +6,7 @@
 
 [node name="Bulle" type="Node2D"]
 script = ExtResource("1_ni7nq")
+coussin_color = Color(0.886667, 0.8, 1, 1)
 color_id = 2
 
 [node name="Sprite_Bulle" type="Sprite2D" parent="."]
