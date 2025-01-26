@@ -16,8 +16,11 @@ func do_action(char: Character) -> float:
 		var bubble_node: Bulle = preview.instantiate_bubble_node()
 		if (not is_instance_valid(bubble_node)):
 			continue
+		
 		bubble_node.position = Vector2.ZERO
 		var curve := board.calculate_path(char.get_tile_pos(), dir)
+		if curve.point_count < 2:
+			continue
 		var path: Path2D = Path2D.new()
 		path.curve = curve
 		
