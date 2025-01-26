@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bauj4vo86swc"
+path="res://.godot/imported/GGJ SOGAMES - MDC - PireRates Emergency lvl1.mp3-1794f1a2e1b7aba80cc2e21265444f49.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/GGJ SOGAMES - MDC - PireRates Emergency lvl1.mp3"
+dest_files=["res://.godot/imported/GGJ SOGAMES - MDC - PireRates Emergency lvl1.mp3-1794f1a2e1b7aba80cc2e21265444f49.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

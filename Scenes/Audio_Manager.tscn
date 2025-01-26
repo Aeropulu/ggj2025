@@ -1,5 +1,45 @@
-[gd_scene format=3 uid="uid://doofg254db6mf"]
+[gd_scene load_steps=2 format=3 uid="uid://doofg254db6mf"]
 
-[node name="AudioManager" type="Node2D"]
+[ext_resource type="Script" path="res://Scripts/Autoload/Audio_Manager.gd" id="1_24swl"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioManager" type="Node2D" node_paths=PackedStringArray("audio_players_musique", "audio_players_bruitage", "audio_players_voix", "audio_players_pop", "audio_players_wrong")]
+script = ExtResource("1_24swl")
+audio_players_musique = [NodePath("Musique"), NodePath("Musique2"), NodePath("Musique3"), NodePath("Musique4"), NodePath("Musique5")]
+audio_players_bruitage = [NodePath("Bruitage"), NodePath("Bruitage2"), NodePath("Bruitage3"), NodePath("Bruitage4"), NodePath("Bruitage5")]
+audio_players_voix = [NodePath("Voix")]
+audio_players_pop = [NodePath("Pop"), NodePath("Pop2"), NodePath("Pop3")]
+audio_players_wrong = [NodePath("Wrong"), NodePath("Wrong2"), NodePath("Wrong3")]
+
+[node name="Musique" type="AudioStreamPlayer" parent="."]
+
+[node name="Musique2" type="AudioStreamPlayer" parent="."]
+
+[node name="Musique3" type="AudioStreamPlayer" parent="."]
+
+[node name="Musique4" type="AudioStreamPlayer" parent="."]
+
+[node name="Musique5" type="AudioStreamPlayer" parent="."]
+
+[node name="Bruitage" type="AudioStreamPlayer" parent="."]
+
+[node name="Bruitage2" type="AudioStreamPlayer" parent="."]
+
+[node name="Bruitage3" type="AudioStreamPlayer" parent="."]
+
+[node name="Bruitage4" type="AudioStreamPlayer" parent="."]
+
+[node name="Bruitage5" type="AudioStreamPlayer" parent="."]
+
+[node name="Voix" type="AudioStreamPlayer" parent="."]
+
+[node name="Pop" type="AudioStreamPlayer" parent="."]
+
+[node name="Pop2" type="AudioStreamPlayer" parent="."]
+
+[node name="Pop3" type="AudioStreamPlayer" parent="."]
+
+[node name="Wrong" type="AudioStreamPlayer" parent="."]
+
+[node name="Wrong2" type="AudioStreamPlayer" parent="."]
+
+[node name="Wrong3" type="AudioStreamPlayer" parent="."]

@@ -17,5 +17,8 @@ func _On_Bouton_Pressed():
 func _On_Bouton_Skip_Pressed():
 	_Go_To_Game_Scene()
 
+func Play_Music():
+	AudioManager.Play(load())
+
 func _Go_To_Game_Scene():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
