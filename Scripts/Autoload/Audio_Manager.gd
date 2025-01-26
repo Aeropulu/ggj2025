@@ -79,7 +79,7 @@ func Play(musique: AudioStream, bus: Bus, volume: float = -5, pitch: float = 1.0
 			return
 	printerr("Aucun AudioStreamPlayer disponible pour le bus : %d" % bus)
 
-func Pop_Button(volume : float = 0, pitch_min : float = 0.9, pitch_max : float = 1.15):
+func Pop_Button(volume : float = 1, pitch_min : float = 0.9, pitch_max : float = 1.15):
 	var random_pitch = randf_range(pitch_min, pitch_max)
 	var stream_to_play = pop_sounds.pick_random()
 	for player in audio_players_pop:
@@ -91,7 +91,7 @@ func Pop_Button(volume : float = 0, pitch_min : float = 0.9, pitch_max : float =
 			return
 	printerr("Aucun AudioStreamPlayer disponible pour Pop_Button")
 
-func Wrong(volume : float = 0, pitch_min : float = 0.9, pitch_max : float = 1.05):
+func Wrong(volume : float = 1, pitch_min : float = 0.9, pitch_max : float = 1.05):
 	var random_pitch = randf_range(pitch_min, pitch_max)
 	var stream_to_play = wrong_sounds.pick_random()
 	for player in audio_players_wrong:
