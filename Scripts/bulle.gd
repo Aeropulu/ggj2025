@@ -39,6 +39,18 @@ func _process(delta: float) -> void:
 func apply_anim() -> void:
 	print("ploc")
 	if is_instance_valid(matching_bubbles_parent):
-		matching_bubbles_parent.queue_free()
+		for bubble in matching_bubbles_parent.get_children():
+			if bubble is Bulle:
+				bubble.pop()
+
 	if is_instance_valid(falling_bubbles_parent):
 		get_tree().create_tween().tween_property(falling_bubbles_parent, "position", Vector2(0, 1000), 0.3)
+
+func pop() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2.ONE * 2.0, 0.1)
+	tween.parallel().tween_property(self, "modulate", Color.TRANSPARENT, 0.1)
+	tween.finished.connect(queue_free)
+	
+func fall() -> void:
+	pass

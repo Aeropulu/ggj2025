@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=6 format=3 uid="uid://bn2xfq8hpbt7c"]
 
-[ext_resource type="PackedScene" uid="uid://cb33wi5j8ucka" path="res://Scenes/Bulles/Bulle_blue.tscn" id="1_hwohr"]
+[ext_resource type="PackedScene" uid="uid://c7b8lams2ybn5" path="res://Scenes/Bulles/Bulle_blue.tscn" id="1_hwohr"]
 [ext_resource type="PackedScene" uid="uid://wjrrnqek0pca" path="res://Scenes/Bulles/Bulle_green.tscn" id="2_bi117"]
 [ext_resource type="PackedScene" uid="uid://0pykulbydmav" path="res://Scenes/Bulles/Bulle_purple.tscn" id="3_b0nlp"]
 [ext_resource type="PackedScene" uid="uid://bu82ai0esndtw" path="res://Scenes/Bulles/Bulle_red.tscn" id="4_1lgxf"]
