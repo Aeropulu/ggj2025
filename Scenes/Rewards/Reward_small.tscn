@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1vr5gnjdsb77"]
+
+[ext_resource type="Script" path="res://Scripts/reward.gd" id="1_hionk"]
+[ext_resource type="Texture2D" uid="uid://ovkoe7forxjy" path="res://Assets/Sprites/Récompenses/Doublon/Doublon.png" id="2_2s8bg"]
+
+[node name="RewardDefeat" type="Node2D"]
+script = ExtResource("1_hionk")
+score = 20
+
+[node name="Doublon" type="Sprite2D" parent="."]
+texture = ExtResource("2_2s8bg")

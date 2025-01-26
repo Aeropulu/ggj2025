@@ -5,8 +5,18 @@ var width: int = 8
 var height: int = 16
 var min_to_match: int = 3
 
+@export var rewards: Array[PackedScene]
+@export var default_reward: PackedScene = preload("res://Scenes/Rewards/Reward_defeat.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	while rewards.size() < width:
+		rewards.push_back(default_reward)
+	rewards.shuffle()
+	for i in range(0, width):
+		var reward_node: Reward = rewards[i].instantiate()
+		add_child(reward_node)
+		reward_node.position = map_to_local(Vector2i(i, -1))
 	pass # Replace with function body.
 
 
@@ -111,3 +121,12 @@ func get_falling_bubbles() -> Array[Bulle]:
 		
 	
 	return result
+
+func get_reward(column: int) -> Reward:
+	var reward: Reward = null
+	for child in get_children():
+		if child is Reward:
+			reward = child
+		if (reward != null and local_to_map(reward.position).x == column):
+			return reward
+	return null

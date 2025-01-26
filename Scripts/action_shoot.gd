@@ -69,7 +69,6 @@ func make_preview(char: Character)-> Node2D:
 		var curve := board.calculate_path(char.get_tile_pos(), dir)
 		var line := Line2D.new()
 		line.width = 4
-		line.default_color = Color("d7ae87")
 		for i in range(0, curve.point_count):
 			line.add_point(curve.get_point_position(i))
 		preview_node.add_child(line)

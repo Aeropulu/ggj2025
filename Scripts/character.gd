@@ -31,6 +31,8 @@ func move_to(tile_coord: Vector2i) -> void:
 	animation_player.animation_finished.connect(func(_name):animation_player.play("idle"))
 	var move_tween := get_tree().create_tween()
 	move_tween.tween_property(self, "global_position", pos, move_duration)
+	if tile_coord.y < 0:
+		finish_level(tile_coord.x)
 
 func get_tile_pos() -> Vector2i:
 	if (not is_instance_valid(_tilemap)):
@@ -58,4 +60,9 @@ func die() -> void:
 	for i in range(4):
 		tween.tween_property(self, "modulate", Color.RED, transition_time)
 		tween.tween_property(self, "modulate", Color.WHITE, transition_time)
-	
+
+func finish_level(column: int) -> void:
+	var reward: Reward = _tilemap.get_reward(column)
+	if not is_instance_valid(reward) or reward.kill_player:
+		die()
+	var score: int = reward.score
