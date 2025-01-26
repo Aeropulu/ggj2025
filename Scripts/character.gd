@@ -1,16 +1,17 @@
 extends Node2D
 class_name Character
 
-@export var _tilemap: Board
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 signal on_die
 
 var move_duration: float
 var bump_duration: float = 0.2
+
+@export var board: Board
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	move_to(Vector2i(0, 8))
+	move_to(Vector2i(board.width / 2, board.height - 1))
 	move_duration = animation_player.get_animation("move").length
 
 
@@ -19,10 +20,11 @@ func _process(delta: float) -> void:
 	pass
 
 func move_to(tile_coord: Vector2i) -> void:
-	if (not is_instance_valid(_tilemap)):
-		return
-	var pos = _tilemap.to_global(_tilemap.map_to_local(tile_coord))
-	var bubble = _tilemap.get_bubble(tile_coord)
+	
+	if (not is_instance_valid(board)):
+		board = Game.current_board
+	var pos = board.to_global(board.map_to_local(tile_coord))
+	var bubble = board.get_bubble(tile_coord)
 	if is_instance_valid(bubble):
 		bubble.queue_free()
 		die()
@@ -35,15 +37,17 @@ func move_to(tile_coord: Vector2i) -> void:
 		finish_level(tile_coord.x)
 
 func get_tile_pos() -> Vector2i:
-	if (not is_instance_valid(_tilemap)):
+	board = Game.current_board
+	if (not is_instance_valid(board)):
 		return Vector2i.ZERO
-	return _tilemap.local_to_map(_tilemap.to_local(self.global_position))
+	return board.local_to_map(board.to_local(self.global_position))
 
 func advance() -> void:
 	move_to(get_tile_pos() + Vector2i.UP)
 	
 func bump(direction: Vector2i) -> void:
-	var vector: Vector2 = Vector2(direction * _tilemap.tile_set.tile_size) * 0.5
+	board = Game.current_board
+	var vector: Vector2 = Vector2(direction * board.tile_set.tile_size) * 0.5
 	var start_pos := global_position
 	var bump_pos := global_position + vector
 	var bump_tween := get_tree().create_tween()
@@ -62,7 +66,9 @@ func die() -> void:
 		tween.tween_property(self, "modulate", Color.WHITE, transition_time)
 
 func finish_level(column: int) -> void:
-	var reward: Reward = _tilemap.get_reward(column)
+	board = Game.current_board
+	var reward: Reward = board.get_reward(column)
 	if not is_instance_valid(reward) or reward.kill_player:
 		die()
+		return
 	var score: int = reward.score
