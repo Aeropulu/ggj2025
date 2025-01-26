@@ -1,16 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cectk5t3obed7"]
+[gd_scene load_steps=3 format=3 uid="uid://cectk5t3obed7"]
 
 [ext_resource type="Script" path="res://Scripts/reward.gd" id="1_lkkpe"]
-[ext_resource type="Texture2D" uid="uid://c0qr3jhi7wk33" path="res://Assets/Sprites/Récompenses/Tresor/Trésor_Bottom.png" id="2_tt738"]
-[ext_resource type="Texture2D" uid="uid://cl62kd1tx5fa7" path="res://Assets/Sprites/Récompenses/Tresor/Trésor_Top.png" id="3_ykqnq"]
+[ext_resource type="Texture2D" uid="uid://c7ywrhv5gbkwx" path="res://Assets/Sprites/Récompenses/Tresor/Trésor.png" id="2_1rm1o"]
 
 [node name="RewardDefeat" type="Node2D"]
 script = ExtResource("1_lkkpe")
 score = 100
 
-[node name="TrésorBottom" type="Sprite2D" parent="."]
-texture = ExtResource("2_tt738")
-
 [node name="Trésor" type="Sprite2D" parent="."]
 top_level = true
-texture = ExtResource("3_ykqnq")
+texture = ExtResource("2_1rm1o")

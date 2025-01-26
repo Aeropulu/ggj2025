@@ -369,7 +369,7 @@ tracks/27/path = NodePath(".")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
-"times": PackedFloat32Array(17.9333),
+"times": PackedFloat32Array(17.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -997,17 +997,16 @@ texture = ExtResource("7_wrgh0")
 
 [node name="TextRect_MidPlan" type="TextureRect" parent="Shot_02"]
 layout_mode = 0
-offset_left = 36.0
-offset_right = 2916.0
+offset_right = 2880.0
 offset_bottom = 1620.0
 texture = ExtResource("8_eny4h")
 
 [node name="TextRect_PremierPlan" type="TextureRect" parent="Shot_02"]
 layout_mode = 0
-offset_left = 224.0
-offset_top = 8.0
-offset_right = 3384.0
-offset_bottom = 1790.0
+offset_left = -9.0
+offset_top = -36.0
+offset_right = 3151.0
+offset_bottom = 1746.0
 texture = ExtResource("9_qveub")
 
 [node name="Shot_03" type="Control" parent="."]
@@ -1095,10 +1094,10 @@ offset_bottom = 1762.0
 
 [node name="TextRect_MousseArr" type="TextureRect" parent="Shot_04"]
 layout_mode = 0
-offset_left = 906.0
-offset_top = 125.0
-offset_right = 1814.0
-offset_bottom = 759.0
+offset_left = 1023.0
+offset_top = 176.0
+offset_right = 1931.0
+offset_bottom = 810.0
 texture = ExtResource("20_d27na")
 
 [node name="TextRect_Bouchon" type="TextureRect" parent="Shot_04"]
@@ -1111,26 +1110,26 @@ texture = ExtResource("21_l3l1o")
 
 [node name="TextRect_Main" type="TextureRect" parent="Shot_04"]
 layout_mode = 0
-offset_left = 503.0
-offset_top = 306.0
-offset_right = 1044.0
-offset_bottom = 825.0
+offset_left = 725.0
+offset_top = 360.0
+offset_right = 1266.0
+offset_bottom = 879.0
 texture = ExtResource("22_r5yoo")
 
 [node name="TextRect_Mousse_Droite" type="TextureRect" parent="Shot_04"]
 layout_mode = 0
-offset_left = 1944.0
-offset_top = 93.0
-offset_right = 3144.0
-offset_bottom = 908.0
+offset_left = 1855.0
+offset_top = 166.0
+offset_right = 3055.0
+offset_bottom = 981.0
 texture = ExtResource("23_088cp")
 
 [node name="TextRect_MousseAv" type="TextureRect" parent="Shot_04"]
 layout_mode = 0
-offset_left = 1392.0
-offset_top = 351.0
-offset_right = 3200.0
-offset_bottom = 1442.0
+offset_left = 1284.0
+offset_top = 262.0
+offset_right = 3092.0
+offset_bottom = 1353.0
 texture = ExtResource("24_ym7m8")
 
 [node name="Shot_05" type="Control" parent="."]
