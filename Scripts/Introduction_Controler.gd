@@ -20,6 +20,7 @@ func _On_Bouton_Skip_Pressed():
 
 func Play_Music():
 	AudioManager.Play(load("res://Assets/Audio/GGJ SOGAMES - MDC - PireRates Cinematic.mp3"),AudioManager.Bus.MUSIQUE)
+	AudioManager.Play(load("res://Assets/Audio/SFX/SoundBybrunoboselli__pirate-tavern.wav"), AudioManager.Bus.BRUITAGE, 2.0)
 
 func _Go_To_Game_Scene():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")

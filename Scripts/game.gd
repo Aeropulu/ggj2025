@@ -44,7 +44,8 @@ static func next_level() -> void:
 
 static func fail_level() -> void:
 	instance.switch_board(instance.levels[instance.current_level])
-
+	AudioManager.Wrong(1.0)
 	
 static func win_game() -> void:
 	instance.add_child(instance.victory_screen.instantiate())
+	AudioManager.Pop_Button(1.0)

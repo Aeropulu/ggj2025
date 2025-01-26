@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bsvlki5sp2h05" path="res://Assets/Sprites/Personnage/Mouvement/Personnage_Mouvement_F05.png" id="9_2vmgt"]
 [ext_resource type="Script" path="res://Scripts/board.gd" id="9_i64tl"]
 [ext_resource type="Resource" uid="uid://cpu4hwv55iyp2" path="res://Assets/Actions/move_up.tres" id="9_vcora"]
-[ext_resource type="PackedScene" path="res://Scenes/Avancement.tscn" id="10_1brcn"]
+[ext_resource type="PackedScene" uid="uid://yjqrmixsdp0c" path="res://Scenes/Avancement.tscn" id="10_1brcn"]
 [ext_resource type="Texture2D" uid="uid://c4fgjsqa1b1y2" path="res://Assets/Sprites/Personnage/Mouvement/Personnage_Mouvement_F06.png" id="10_2vyv3"]
 [ext_resource type="Script" path="res://Scripts/preview.gd" id="10_7mp3v"]
 [ext_resource type="PackedScene" uid="uid://cb33wi5j8ucka" path="res://Scenes/Bulles/Bulle_blue.tscn" id="11_cxpcf"]
