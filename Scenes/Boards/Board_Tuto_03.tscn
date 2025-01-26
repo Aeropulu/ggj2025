@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://cj30r40srmd11"]
+[gd_scene load_steps=5 format=4 uid="uid://cj30r40srmd11"]
 
 [ext_resource type="TileSet" uid="uid://bn2xfq8hpbt7c" path="res://Assets/Tileset/Tileset_Bubbles.tres" id="1_8fcs0"]
 [ext_resource type="Script" path="res://Scripts/board.gd" id="2_bhoec"]
+[ext_resource type="PackedScene" uid="uid://cectk5t3obed7" path="res://Scenes/Rewards/Reward_big.tscn" id="3_3gxoy"]
+[ext_resource type="PackedScene" uid="uid://c1vr5gnjdsb77" path="res://Scenes/Rewards/Reward_small.tscn" id="4_muupp"]
 
 [node name="Board" type="TileMapLayer"]
 position = Vector2(362, 107)
@@ -9,3 +11,5 @@ rotation = 0.00698132
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAABQABAAAAAAAAAAAABQACAAAAAAAAAAAABQADAAAAAAAAAAAABQAEAAAAAAAAAAAABQAFAAAAAAAAAAAABQAGAAAAAAAAAAAABQAHAAAAAAAAAAAABQAAAAEAAAAAAAAAAgABAAEAAAAAAAAAAgACAAEAAAAAAAAAAgADAAEAAAAAAAAAAgAEAAEAAAAAAAAAAgAFAAEAAAAAAAAAAgAGAAEAAAAAAAAAAgAHAAEAAAAAAAAAAgAHAAIAAAAAAAAAAwAGAAIAAAAAAAAAAwAFAAIAAAAAAAAAAwAEAAIAAAAAAAAAAwADAAIAAAAAAAAAAwACAAIAAAAAAAAAAwABAAIAAAAAAAAAAwAAAAIAAAAAAAAAAwAAAAMAAAAAAAAABAABAAMAAAAAAAAABAACAAMAAAAAAAAABAADAAMAAAAAAAAABAAEAAMAAAAAAAAABAAFAAMAAAAAAAAABAAGAAMAAAAAAAAABAAHAAMAAAAAAAAABAA=")
 tile_set = ExtResource("1_8fcs0")
 script = ExtResource("2_bhoec")
+is_tutorial = true
+rewards = Array[PackedScene]([ExtResource("3_3gxoy"), ExtResource("4_muupp"), ExtResource("4_muupp"), ExtResource("4_muupp")])
