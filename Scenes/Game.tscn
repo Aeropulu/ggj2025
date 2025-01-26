@@ -94,7 +94,7 @@ deck = NodePath("..")
 
 [node name="Board" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
-position = Vector2(361, 25)
+position = Vector2(362, 107)
 rotation = 0.00698132
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAgABAAAAAAAAAAAAAgACAAAAAAAAAAAAAgADAAAAAAAAAAAAAgAEAAAAAAAAAAAAAgAFAAAAAAAAAAAAAgAGAAAAAAAAAAAAAgAHAAAAAAAAAAAAAgAAAAEAAAAAAAAAAwAHAAEAAAAAAAAAAwA=")
 tile_set = ExtResource("7_uet36")
@@ -107,6 +107,7 @@ texture = ExtResource("17_anqpt")
 [node name="Preview" type="Node2D" parent="Coussin" node_paths=PackedStringArray("coussin")]
 unique_name_in_owner = true
 position = Vector2(-2, -3)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("10_7mp3v")
 bubbles = Array[PackedScene]([ExtResource("11_cxpcf"), ExtResource("12_lg3k2"), ExtResource("13_1xyp3"), ExtResource("14_qsq2o")])
 coussin = NodePath("..")
