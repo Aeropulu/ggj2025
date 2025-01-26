@@ -1,24 +1,34 @@
-[gd_scene load_steps=18 format=4 uid="uid://2hbqbvrxxpyu"]
+[gd_scene load_steps=24 format=4 uid="uid://2hbqbvrxxpyu"]
 
+[ext_resource type="Texture2D" uid="uid://da8t8ru1b4dyb" path="res://Assets/Sprites/Plateau/Plateau.png" id="1_6okof"]
 [ext_resource type="Script" path="res://Scripts/character.gd" id="2_h5epx"]
 [ext_resource type="Texture2D" uid="uid://ddbyit1r5l5xj" path="res://Assets/Sprites/Personnage/Idle/Personnage_Idle.png" id="2_ldyfx"]
 [ext_resource type="Script" path="res://Scripts/deck.gd" id="3_3p6wp"]
 [ext_resource type="PackedScene" uid="uid://bdgwrvgm46y45" path="res://Scenes/ActionButton.tscn" id="3_s71h7"]
 [ext_resource type="Script" path="res://Scripts/action_base.gd" id="4_on1wx"]
-[ext_resource type="Texture2D" uid="uid://demjh14o1os2u" path="res://Assets/Sprites/Cartes/Fond_Carte.png" id="4_uio1u"]
-[ext_resource type="Script" path="res://Scripts/action_node.gd" id="5_scagp"]
 [ext_resource type="Resource" uid="uid://5gwqrax77h57" path="res://Assets/Actions/move_left.tres" id="6_iuqrl"]
+[ext_resource type="Resource" uid="uid://dvbm7771ngc77" path="res://Assets/Actions/move_down.tres" id="6_sooy2"]
 [ext_resource type="Resource" uid="uid://bofse52x8ehac" path="res://Assets/Actions/shoot_bubble_front.tres" id="7_k40js"]
 [ext_resource type="TileSet" uid="uid://bn2xfq8hpbt7c" path="res://Assets/Tileset/Tileset_Bubbles.tres" id="7_uet36"]
 [ext_resource type="Resource" uid="uid://dyrpaf762uyxu" path="res://Assets/Actions/move_right.tres" id="7_wlm4u"]
 [ext_resource type="Script" path="res://Scripts/board.gd" id="9_i64tl"]
+[ext_resource type="Resource" uid="uid://cpu4hwv55iyp2" path="res://Assets/Actions/move_up.tres" id="9_vcora"]
 [ext_resource type="Script" path="res://Scripts/preview.gd" id="10_7mp3v"]
 [ext_resource type="PackedScene" uid="uid://c7b8lams2ybn5" path="res://Scenes/Bulles/Bulle_blue.tscn" id="11_cxpcf"]
+[ext_resource type="Resource" uid="uid://dj5o6e3utx014" path="res://Assets/Actions/shoot_bubble_front_left.tres" id="11_pms88"]
 [ext_resource type="PackedScene" uid="uid://wjrrnqek0pca" path="res://Scenes/Bulles/Bulle_green.tscn" id="12_lg3k2"]
+[ext_resource type="Resource" uid="uid://blelf4pnx0gli" path="res://Assets/Actions/shoot_bubble_front_right.tres" id="12_p2ye5"]
 [ext_resource type="PackedScene" uid="uid://0pykulbydmav" path="res://Scenes/Bulles/Bulle_purple.tscn" id="13_1xyp3"]
+[ext_resource type="Resource" uid="uid://cl7lqnb4ry7xu" path="res://Assets/Actions/shoot_bubble_left_right.tres" id="13_pbo37"]
 [ext_resource type="PackedScene" uid="uid://bu82ai0esndtw" path="res://Scenes/Bulles/Bulle_red.tscn" id="14_qsq2o"]
+[ext_resource type="Texture2D" uid="uid://dsrxftxdx727h" path="res://Assets/Sprites/Plateau/Coussin.png" id="17_anqpt"]
+[ext_resource type="Texture2D" uid="uid://dmdtjnehrpqpx" path="res://Assets/Sprites/Plateau/NextColor.png" id="20_juev3"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Plateau" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_6okof")
 
 [node name="Character" type="Node2D" parent="." node_paths=PackedStringArray("_tilemap")]
 script = ExtResource("2_h5epx")
@@ -28,105 +38,80 @@ _tilemap = NodePath("../Board")
 texture = ExtResource("2_ldyfx")
 
 [node name="Deck" type="HBoxContainer" parent="."]
-offset_left = 586.0
-offset_top = 265.0
-offset_right = 1142.0
-offset_bottom = 401.0
+offset_left = 1261.0
+offset_top = 668.0
+offset_right = 1889.0
+offset_bottom = 804.0
 script = ExtResource("3_3p6wp")
-cards = Array[ExtResource("4_on1wx")]([ExtResource("6_iuqrl"), ExtResource("6_iuqrl"), ExtResource("7_wlm4u"), ExtResource("7_wlm4u"), ExtResource("7_k40js"), ExtResource("7_k40js")])
+cards = Array[ExtResource("4_on1wx")]([ExtResource("6_sooy2"), ExtResource("6_iuqrl"), ExtResource("7_wlm4u"), ExtResource("9_vcora"), ExtResource("7_k40js"), ExtResource("11_pms88"), ExtResource("12_p2ye5"), ExtResource("13_pbo37")])
 
 [node name="ActionButton" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
 layout_mode = 2
-action = ExtResource("6_iuqrl")
-character = NodePath("../../Character")
-preview = NodePath("../../Preview")
-deck = NodePath("..")
-
-[node name="ActionButton2" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
-layout_mode = 2
-action = ExtResource("6_iuqrl")
-bubble_scene = ExtResource("12_lg3k2")
-character = NodePath("../../Character")
-preview = NodePath("../../Preview")
-deck = NodePath("..")
-
-[node name="ActionButton3" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
-layout_mode = 2
-action = ExtResource("6_iuqrl")
-bubble_scene = ExtResource("13_1xyp3")
-character = NodePath("../../Character")
-preview = NodePath("../../Preview")
-deck = NodePath("..")
-
-[node name="ActionButton4" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
-layout_mode = 2
+flat = true
 action = ExtResource("6_iuqrl")
 bubble_scene = ExtResource("14_qsq2o")
 character = NodePath("../../Character")
-preview = NodePath("../../Preview")
+preview = NodePath("../../Coussin/Preview")
 deck = NodePath("..")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
-offset_left = 705.0
-offset_top = 225.0
-offset_right = 745.0
-offset_bottom = 265.0
-
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="Padding" type="Control" parent="Deck"]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "<="
-icon = ExtResource("4_uio1u")
-flat = true
-icon_alignment = 1
 
-[node name="ActionNode" type="Node" parent="HBoxContainer/Button" node_paths=PackedStringArray("char")]
-script = ExtResource("5_scagp")
-char = NodePath("../../../Character")
+[node name="ActionButton2" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
+layout_mode = 2
+flat = true
 action = ExtResource("6_iuqrl")
+bubble_scene = ExtResource("13_1xyp3")
+character = NodePath("../../Character")
+preview = NodePath("../../Coussin/Preview")
+deck = NodePath("..")
 
-[node name="Button2" type="Button" parent="HBoxContainer"]
+[node name="Padding2" type="Control" parent="Deck"]
+custom_minimum_size = Vector2(15, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "=>"
-icon = ExtResource("4_uio1u")
-flat = true
-icon_alignment = 1
 
-[node name="ActionNode" type="Node" parent="HBoxContainer/Button2" node_paths=PackedStringArray("char")]
-script = ExtResource("5_scagp")
-char = NodePath("../../../Character")
-action = ExtResource("7_wlm4u")
-
-[node name="Button3" type="Button" parent="HBoxContainer"]
+[node name="ActionButton3" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "PEW"
-icon = ExtResource("4_uio1u")
 flat = true
-icon_alignment = 1
+action = ExtResource("6_iuqrl")
+character = NodePath("../../Character")
+preview = NodePath("../../Coussin/Preview")
+deck = NodePath("..")
 
-[node name="ActionNode" type="Node" parent="HBoxContainer/Button3" node_paths=PackedStringArray("char")]
-script = ExtResource("5_scagp")
-char = NodePath("../../../Character")
-action = ExtResource("7_k40js")
+[node name="Padding3" type="Control" parent="Deck"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="ActionButton4" parent="Deck" node_paths=PackedStringArray("character", "preview", "deck") instance=ExtResource("3_s71h7")]
+layout_mode = 2
+flat = true
+action = ExtResource("6_iuqrl")
+bubble_scene = ExtResource("12_lg3k2")
+character = NodePath("../../Character")
+preview = NodePath("../../Coussin/Preview")
+deck = NodePath("..")
 
 [node name="Board" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
+position = Vector2(361, 25)
+rotation = 0.00698132
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAgABAAAAAAAAAAAAAgACAAAAAAAAAAAAAgADAAAAAAAAAAAAAgAEAAAAAAAAAAAAAgAFAAAAAAAAAAAAAgAGAAAAAAAAAAAAAgAHAAAAAAAAAAAAAgAAAAEAAAAAAAAAAwAHAAEAAAAAAAAAAwA=")
 tile_set = ExtResource("7_uet36")
 script = ExtResource("9_i64tl")
 
-[node name="Preview" type="Node2D" parent="."]
+[node name="Coussin" type="Sprite2D" parent="."]
+position = Vector2(1119, 450)
+texture = ExtResource("17_anqpt")
+
+[node name="Preview" type="Node2D" parent="Coussin" node_paths=PackedStringArray("coussin")]
 unique_name_in_owner = true
-position = Vector2(808, 127)
+position = Vector2(-2, -3)
 script = ExtResource("10_7mp3v")
 bubbles = Array[PackedScene]([ExtResource("11_cxpcf"), ExtResource("12_lg3k2"), ExtResource("13_1xyp3"), ExtResource("14_qsq2o")])
+coussin = NodePath("..")
 
-[connection signal="pressed" from="HBoxContainer/Button" to="HBoxContainer/Button/ActionNode" method="do_action"]
-[connection signal="pressed" from="HBoxContainer/Button2" to="HBoxContainer/Button2/ActionNode" method="do_action"]
-[connection signal="pressed" from="HBoxContainer/Button3" to="HBoxContainer/Button3/ActionNode" method="do_action"]
+[node name="NextColor" type="Sprite2D" parent="Coussin"]
+position = Vector2(57, -62)
+rotation = 0.488692
+texture = ExtResource("20_juev3")

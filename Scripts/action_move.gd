@@ -14,11 +14,13 @@ func do_action(char: Character)-> bool:
 	char.move_to(next_pos)
 	return true
 
-func make_preview(_char: Character)-> Node2D:
+func make_preview(char: Character)-> Node2D:
 	var dir := Vector2(relative_movement)
 	var angle = Vector2.RIGHT.angle_to(dir)
 	var preview_node: Node2D = preview_arrow_scene.instantiate()
 	if not is_instance_valid(preview_node):
 		return null
 	preview_node.rotation = angle
+	var board: Board = char.get_node("%Board")
+	preview_node.position = board.map_to_local(char.get_tile_pos())
 	return preview_node
