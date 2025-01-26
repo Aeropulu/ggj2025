@@ -13,12 +13,13 @@ func Connect_Signaux():
 	
 func _On_Bouton_Pressed():
 	_animation_player.play("Introduction")
+	Play_Music()
 
 func _On_Bouton_Skip_Pressed():
 	_Go_To_Game_Scene()
 
 func Play_Music():
-	AudioManager.Play(load())
+	AudioManager.Play(load("res://Assets/Audio/GGJ SOGAMES - MDC - PireRates Emergency lvl1.mp3"),AudioManager.Bus.MUSIQUE)
 
 func _Go_To_Game_Scene():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
