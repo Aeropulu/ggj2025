@@ -11,9 +11,13 @@ var bump_duration: float = 0.2
 @export var board: Board
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	move_to(Vector2i(board.width / 2, board.height - 1))
+	move_to_start()
 	move_duration = animation_player.get_animation("move").length
 
+func move_to_start() -> void:
+	if (not is_instance_valid(board)):
+		board = Game.current_board
+	move_to(Vector2i((board.width - 1)  / 2, board.height))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -64,6 +68,9 @@ func die() -> void:
 	for i in range(4):
 		tween.tween_property(self, "modulate", Color.RED, transition_time)
 		tween.tween_property(self, "modulate", Color.WHITE, transition_time)
+	await tween.finished
+	Game.fail_level()
+	move_to_start()
 
 func finish_level(column: int) -> void:
 	board = Game.current_board
@@ -72,3 +79,6 @@ func finish_level(column: int) -> void:
 		die()
 		return
 	var score: int = reward.score
+	EventManager.Invoke_On_Add_Score(score)
+	Game.next_level()
+	move_to_start()

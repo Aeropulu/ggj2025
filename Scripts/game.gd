@@ -2,7 +2,10 @@ extends Node2D
 class_name Game
 
 static var current_board: Board
+static var instance: Game
 
+@export var levels: Array[PackedScene]
+var current_level = 0
 
 func switch_board(new_board_scene: PackedScene) -> void:
 	var new_board: Board = new_board_scene.instantiate()
@@ -18,10 +21,29 @@ func switch_board(new_board_scene: PackedScene) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	instance = self
 	current_board = %Board
-	switch_board(load("res://Scenes/Boards/Board_Tuto_01.tscn"))
+	switch_board(levels[0])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pass
+
+static func next_level() -> void:
+	instance.current_level += 1
+	if instance.current_level >= instance.levels.size():
+		win_game()
+		return
+	var level_scene = instance.levels[instance.current_level]
+	instance.switch_board(level_scene)
+	
+
+static func fail_level() -> void:
+	if not instance.current_board.is_tutorial:
+		instance.current_level = 0
+		
+	instance.switch_board(instance.levels[instance.current_level])
+	
+static func win_game() -> void:
 	pass

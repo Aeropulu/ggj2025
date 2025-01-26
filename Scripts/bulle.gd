@@ -44,7 +44,7 @@ func apply_anim() -> void:
 				bubble.pop()
 
 	if is_instance_valid(falling_bubbles_parent):
-		get_tree().create_tween().tween_property(falling_bubbles_parent, "position", Vector2(0, 1000), 0.3)
+		get_tree().create_tween().tween_property(falling_bubbles_parent, "position", Vector2(0, 1000), 0.8)
 
 func pop() -> void:
 	var tween = get_tree().create_tween()
