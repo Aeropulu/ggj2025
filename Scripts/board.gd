@@ -5,6 +5,7 @@ var width: int = 8
 var height: int = 10
 var min_to_match: int = 3
 
+@export var level_name: String = ""
 @export var is_tutorial: bool = false
 @export var rewards: Array[PackedScene]
 @export var default_reward: PackedScene = preload("res://Scenes/Rewards/Reward_defeat.tscn")
