@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdgwrvgm46y45"]
+[gd_scene load_steps=6 format=3 uid="uid://bdgwrvgm46y45"]
 
 [ext_resource type="Script" path="res://Scripts/action_button.gd" id="1_1dbq1"]
 [ext_resource type="Texture2D" uid="uid://demjh14o1os2u" path="res://Assets/Sprites/Cartes/Fond_Carte.png" id="1_dvh4f"]
 [ext_resource type="Texture2D" uid="uid://j5f0pwcy2alu" path="res://Assets/Sprites/Cartes/Effets/Carte_Envoi_Frontal.png" id="3_6mvb2"]
 [ext_resource type="PackedScene" uid="uid://c7b8lams2ybn5" path="res://Scenes/Bulles/Bulle_blue.tscn" id="3_bqxqw"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qujr1"]
+
 [node name="ActionButton" type="Button" node_paths=PackedStringArray("action_icon")]
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qujr1")
 icon = ExtResource("1_dvh4f")
 script = ExtResource("1_1dbq1")
 bubble_scene = ExtResource("3_bqxqw")

@@ -25,20 +25,25 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_pressed() -> void:
+	_on_mouse_exited()
 	if (not is_instance_valid(character) or not is_instance_valid(action)):
 		return
-	action.do_action(character)
-	await get_tree().create_timer(0.2).timeout
+	preview.mouse_pos = get_viewport().get_mouse_position()
+	deck.set_buttons_enable(false)
+	var action_duration:float = action.do_action(character)
+	await get_tree().create_timer(action_duration).timeout
 	if (is_instance_valid(preview)):
-		preview.current_bubble = bubble_scene.instantiate()
+		var preview_bubble = bubble_scene.instantiate()
+		preview.current_bubble = preview_bubble
 	if is_instance_valid(deck):
 		action = deck.draw_card(action)
-	_on_mouse_exited()
-	character.advance()
-	_on_mouse_entered()
 	
+	character.advance()
+	await get_tree().create_timer(character.move_duration).timeout
+	deck.set_buttons_enable(true)
 
 func _on_mouse_entered() -> void:
+	_on_mouse_exited()
 	action_preview = action.make_preview(character)
 	if is_instance_valid(action_preview):
 		board.add_child(action_preview)
