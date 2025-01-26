@@ -218,7 +218,7 @@ tracks/15/path = NodePath("Shot_03/TextRect_Personnage:texture")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(10.8333, 10.8667, 12.1333, 12.1667, 12.7333, 12.7667),
+"times": PackedFloat32Array(10.3667, 10.4001, 12.1333, 12.1667, 13.0333, 13.0667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("1_2t0sf"), ExtResource("2_2crek"), ExtResource("2_2crek"), ExtResource("1_2t0sf"), ExtResource("1_2t0sf"), ExtResource("3_grxx0")]
@@ -342,6 +342,18 @@ tracks/25/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Shot_03/TextRect_MainDroite:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(12.7667, 13.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1907, 953), Vector2(1890, 1034)]
 }
 
 [sub_resource type="Animation" id="Animation_60r0o"]
@@ -658,6 +670,18 @@ tracks/25/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Shot_03/TextRect_MainDroite:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1907, 953)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8skuy"]
 _data = {
@@ -745,10 +769,12 @@ offset_bottom = 40.0
 
 [node name="TextRect_ArrPlan" type="TextureRect" parent="Shot_02"]
 layout_mode = 0
-offset_left = 1890.0
-offset_top = 400.0
-offset_right = 2621.0
-offset_bottom = 1106.0
+offset_left = 1832.0
+offset_top = 248.0
+offset_right = 2563.0
+offset_bottom = 954.0
+rotation = -0.0696374
+scale = Vector2(1.19, 1.19)
 texture = ExtResource("7_wrgh0")
 
 [node name="TextRect_MidPlan" type="TextureRect" parent="Shot_02"]
@@ -831,9 +857,9 @@ texture = ExtResource("17_twm3w")
 [node name="TextRect_MousseAVGauche" type="TextureRect" parent="Shot_03"]
 layout_mode = 0
 offset_left = 1018.0
-offset_top = 156.0
+offset_top = 181.0
 offset_right = 2233.0
-offset_bottom = 1344.0
+offset_bottom = 1369.0
 texture = ExtResource("18_40m0m")
 
 [node name="Shot_04" type="Control" parent="."]
