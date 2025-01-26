@@ -24,8 +24,9 @@ func calculate_path(start_pos: Vector2i, direction: Vector2i) -> Curve2D:
 		if next_pos.x < 0:
 			direction.x = -direction.x
 			next_pos.x = -next_pos.x	
-		elif next_pos.x > width:
+		elif next_pos.x >= width:
 			direction.x = -direction.x
+			# TODO: off by one?
 			next_pos.x = width - (next_pos.x - width)
 			
 		if (next_pos.y < 0 or next_pos.y > height
