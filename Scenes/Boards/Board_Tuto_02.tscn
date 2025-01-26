@@ -12,4 +12,4 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAwABAAAAAAAAAAAAAwACAAAAAAAAAAA
 tile_set = ExtResource("1_qis10")
 script = ExtResource("2_ux5vv")
 is_tutorial = true
-rewards = Array[PackedScene]([ExtResource("3_crobi"), ExtResource("4_eiimo"), ExtResource("4_eiimo")])
+rewards = Array[PackedScene]([ExtResource("3_crobi"), ExtResource("4_eiimo"), ExtResource("4_eiimo"), ExtResource("4_eiimo")])
