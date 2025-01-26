@@ -1,0 +1,17 @@
+[gd_scene load_steps=9 format=3 uid="uid://yjqrmixsdp0c"]
+
+[ext_resource type="Script" path="res://Scripts/Avancement_Controler.gd" id="1_nyb1m"]
+[ext_resource type="Texture2D" uid="uid://canxctyp5wl8x" path="res://Assets/Sprites/Avancement/Avancement_01.png" id="2_7jvf5"]
+[ext_resource type="Texture2D" uid="uid://7nc4g30o6xtc" path="res://Assets/Sprites/Avancement/Avancement_02.png" id="3_to7rp"]
+[ext_resource type="Texture2D" uid="uid://bah72xox17afg" path="res://Assets/Sprites/Avancement/Avancement_03.png" id="4_oa1yt"]
+[ext_resource type="Texture2D" uid="uid://b1ta6837dkujm" path="res://Assets/Sprites/Avancement/Avancement_04.png" id="5_mmsqj"]
+[ext_resource type="Texture2D" uid="uid://crjrib8tw58tp" path="res://Assets/Sprites/Avancement/Avancement_05.png" id="6_71tlx"]
+[ext_resource type="Texture2D" uid="uid://dyc8257rb437o" path="res://Assets/Sprites/Avancement/Avancement_06.png" id="7_yqtbo"]
+[ext_resource type="Texture2D" uid="uid://c7igpbwjorjji" path="res://Assets/Sprites/Avancement/Avancement_07.png" id="8_pvaqj"]
+
+[node name="Avancement" type="Node2D"]
+script = ExtResource("1_nyb1m")
+images_avancement = Array[Texture2D]([ExtResource("2_7jvf5"), ExtResource("3_to7rp"), ExtResource("4_oa1yt"), ExtResource("5_mmsqj"), ExtResource("6_71tlx"), ExtResource("7_yqtbo"), ExtResource("8_pvaqj")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7jvf5")
