@@ -49,3 +49,8 @@ static func fail_level() -> void:
 static func win_game() -> void:
 	instance.add_child(instance.victory_screen.instantiate())
 	AudioManager.Pop_Button(1.0)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.keycode == KEY_ESCAPE:
+			get_tree().quit()
