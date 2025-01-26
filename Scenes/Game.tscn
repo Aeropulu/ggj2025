@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://2hbqbvrxxpyu"]
+[gd_scene load_steps=45 format=4 uid="uid://2hbqbvrxxpyu"]
 
 [ext_resource type="Texture2D" uid="uid://da8t8ru1b4dyb" path="res://Assets/Sprites/Plateau/Plateau.png" id="1_6okof"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_htdqj"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://bu82ai0esndtw" path="res://Scenes/Bulles/Bulle_red.tscn" id="14_qsq2o"]
 [ext_resource type="Texture2D" uid="uid://dsrxftxdx727h" path="res://Assets/Sprites/Plateau/Coussin.png" id="17_anqpt"]
 [ext_resource type="Texture2D" uid="uid://dmdtjnehrpqpx" path="res://Assets/Sprites/Plateau/NextColor.png" id="20_juev3"]
+[ext_resource type="PackedScene" uid="uid://d0b5mkjwdlfrh" path="res://Scenes/tutoriel.tscn" id="39_sdl8c"]
 
 [sub_resource type="Animation" id="Animation_uvjil"]
 length = 0.001
@@ -208,3 +209,5 @@ coussin = NodePath("..")
 position = Vector2(57, -62)
 rotation = 0.488692
 texture = ExtResource("20_juev3")
+
+[node name="Tutoriel" parent="." instance=ExtResource("39_sdl8c")]
