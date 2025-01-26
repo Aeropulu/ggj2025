@@ -1,9 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://doofg254db6mf"]
+[gd_scene load_steps=13 format=3 uid="uid://doofg254db6mf"]
 
 [ext_resource type="Script" path="res://Scripts/Autoload/Audio_Manager.gd" id="1_24swl"]
+[ext_resource type="AudioStream" uid="uid://cm7yo4mobydng" path="res://Assets/Audio/SFX/SoundCoin01.mp3" id="2_s8bx3"]
+[ext_resource type="AudioStream" uid="uid://bqwsl23oyej07" path="res://Assets/Audio/SFX/SoundCoin02.mp3" id="3_uvr42"]
+[ext_resource type="AudioStream" uid="uid://r2crie762vr8" path="res://Assets/Audio/SFX/SoundCoin03.mp3" id="4_gubv1"]
+[ext_resource type="AudioStream" uid="uid://b6f7q5f6e0gg" path="res://Assets/Audio/SFX/SoundCoin04.mp3" id="5_j0xnn"]
+[ext_resource type="AudioStream" uid="uid://1tm1k1g7aqq4" path="res://Assets/Audio/SFX/SoundCoin05.mp3" id="6_tc3gk"]
+[ext_resource type="AudioStream" uid="uid://ba0tyr3umb6tj" path="res://Assets/Audio/SFX/SoundCoin06.mp3" id="7_qanxr"]
+[ext_resource type="AudioStream" uid="uid://b7steehwn27cw" path="res://Assets/Audio/SFX/SoundCoin07.mp3" id="8_ignyd"]
+[ext_resource type="AudioStream" uid="uid://cfel31c4fv8ck" path="res://Assets/Audio/SFX/SoundCoin08.mp3" id="9_yl0g5"]
+[ext_resource type="AudioStream" uid="uid://disn2sgap4ge7" path="res://Assets/Audio/SFX/WrongSound01.mp3" id="10_q7a0i"]
+[ext_resource type="AudioStream" uid="uid://bv6yr2cn5wlby" path="res://Assets/Audio/SFX/WrongSound02.mp3" id="11_lcavd"]
+[ext_resource type="AudioStream" uid="uid://cfvjb3imvth8r" path="res://Assets/Audio/SFX/WrongSound03.mp3" id="12_wf31j"]
 
 [node name="AudioManager" type="Node2D" node_paths=PackedStringArray("audio_players_musique", "audio_players_bruitage", "audio_players_voix", "audio_players_pop", "audio_players_wrong")]
 script = ExtResource("1_24swl")
+pop_sounds = Array[AudioStream]([ExtResource("2_s8bx3"), ExtResource("3_uvr42"), ExtResource("4_gubv1"), ExtResource("5_j0xnn"), ExtResource("6_tc3gk"), ExtResource("7_qanxr"), ExtResource("8_ignyd"), ExtResource("9_yl0g5")])
+wrong_sounds = Array[AudioStream]([ExtResource("10_q7a0i"), ExtResource("11_lcavd"), ExtResource("12_wf31j")])
 audio_players_musique = [NodePath("Musique"), NodePath("Musique2"), NodePath("Musique3"), NodePath("Musique4"), NodePath("Musique5")]
 audio_players_bruitage = [NodePath("Bruitage"), NodePath("Bruitage2"), NodePath("Bruitage3"), NodePath("Bruitage4"), NodePath("Bruitage5")]
 audio_players_voix = [NodePath("Voix")]

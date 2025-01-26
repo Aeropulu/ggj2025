@@ -62,6 +62,7 @@ func do_action(char: Character) -> float:
 		else:
 			last_timer.timeout.connect(func(): carrier.following_path = true)
 		last_timer = board.get_tree().create_timer(delay_between_shots)
+		
 	char.shoot()
 	return directions.size() * delay_between_shots
 
